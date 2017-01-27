@@ -1,0 +1,4054 @@
+/*
+Theme Name: Revista Influência
+Author: Humano Studio
+Author URI: http://humanostud.io
+Description: Tema desenvolvido exclusivamente para o Revista Influência.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: UX, UI, 
+Text Domain: clinete
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+
+
+
+/*INCLUA SUAS FONTES AQUI*/
+ 
+@font-face {
+    font-family: 'titilliumregular';
+    src: url(fonts/titillium-regular-webfont.eot);
+    src: url(fonts/titillium-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fonts/titillium-regular-webfont.woff) format('woff'),
+         url(fonts/titillium-regular-webfont.ttf) format('truetype'),
+         url(fonts/titillium-regular-webfont.svg#titilliumregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'titilliumbold';
+    src: url(fonts/titillium-bold-webfont.eot);
+    src: url(fonts/titillium-bold-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fonts/titillium-bold-webfont.woff) format('woff'),
+         url(fonts/titillium-bold-webfont.ttf) format('truetype'),
+         url(fonts/titillium-bold-webfont.svg#titilliumbold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo100';
+    src: url(fonts/museo100-regular-webfont.eot);
+    src: url(fonts/museo100-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fonts/museo100-regular-webfont.woff) format('woff'),
+         url(fonts/museo100-regular-webfont.ttf) format('truetype'),
+         url(fonts/museo100-regular-webfont.svg#museo100) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo300';
+    src: url(fonts/museo300-regular-webfont.eot);
+    src: url(fonts/museo300-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fonts/museo300-regular-webfont.woff) format('woff'),
+         url(fonts/museo300-regular-webfont.ttf) format('truetype'),
+         url(fonts/museo300-regular-webfont.svg#museo300) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo500';
+    src: url(fonts/museo500-regular-webfont.eot);
+    src: url(fonts/museo500-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fonts/museo500-regular-webfont.woff) format('woff'),
+         url(fonts/museo500-regular-webfont.ttf) format('truetype'),
+         url(fonts/museo500-regular-webfont.svg#museo500) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo700';
+    src: url(fonts/museo700-regular-webfont.eot);
+    src: url(fonts/museo700-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fonts/museo700-regular-webfont.woff) format('woff'),
+         url(fonts/museo700-regular-webfont.ttf) format('truetype'),
+         url(fonts/museo700-regular-webfont.svg#museo700) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo900';
+    src: url(fonts/museo900-regular-webfont.eot);
+    src: url(fonts/museo900-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fonts/museo900-regular-webfont.woff) format('woff'),
+         url(fonts/museo900-regular-webfont.ttf) format('truetype'),
+         url(fonts/museo900-regular-webfont.svg#museo900) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+/*----------------------CLASSES----------------------*/
+
+.ani-02,
+.hided,
+.appeared
+{
+    -webkit-transition: 0.2s all cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: 0.2s all cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: 0.2s all cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: 0.2s all cubic-bezier(0.34, 0, 0, 1);
+    transition: 0.2s all cubic-bezier(0.34, 0, 0, 1);
+}
+
+.ani-04
+{
+    -webkit-transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+    transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+}
+
+.ani-06
+{
+    -webkit-transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+    transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+}
+
+
+
+.ani-delay-04
+{
+    -webkit-transition-delay: 0.4s;
+    -moz-transition-delay: 0.4s;
+    -o-transition-delay: 0.4s;
+    -ms-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+.ani-delay-06
+{
+    -webkit-transition-delay: 0.6s;
+    -moz-transition-delay: 0.6s;
+    -o-transition-delay: 0.6s;
+    -ms-transition-delay: 0.6s;
+    transition-delay: 0.6s;
+}
+
+.ani-delay-08
+{
+    -webkit-transition-delay: 0.8s;
+    -moz-transition-delay: 0.8s;
+    -o-transition-delay: 0.8s;
+    -ms-transition-delay: 0.8s;
+    transition-delay: 0.8s;
+}
+
+
+
+
+.untouchable
+{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.nome-empresa
+{
+    white-space: nowrap;
+}
+
+
+i.ico
+{
+    display: inline-block;
+}
+
+i.mais-circ-line
+{
+    background: url(img/revista-influencia-ico-mais-circ-line.png) no-repeat center;
+    width: 26px;
+    height: 26px;
+    vertical-align: -35%;
+}
+
+i.telefone-circ
+{
+    background: url(img/revista-influencia-ico-telefone-circ.png) no-repeat center;
+    width: 27px;
+    height: 26px;
+    vertical-align: -30%;
+}
+
+i.telefone-circ.vermelho
+{
+    background-image: url(img/revista-influencia-ico-telefone-circ-vermelho.png);
+}
+
+i.maps-pin-line-red
+{
+    background: url(img/revista-influencia-ico-maps-pin-perfil-empresa.png) no-repeat center;
+    width: 13px;
+    height: 15px;
+    vertical-align: -7%;
+}
+
+i.ico.right
+{
+    margin-left: 10px;
+}
+
+.titulo-section
+{
+    background-color: #363636;
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #7db6b0;
+}
+
+.titulo-section span.t-white
+{
+    color: #e4e4e4;
+}
+
+.titulo-section span.t-bold
+{
+    font-family: 'museo900', Arial, sans-serif;
+}
+
+.pagina .submenu
+{
+    background-color: #323232;
+}
+
+.pagina .submenu ul
+{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pagina .submenu ul li
+{
+    display: inline-block;
+    padding: 25px 0;
+}
+
+.pagina .submenu ul li a
+{
+    color: #ededed;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 25px 25px 20px;
+    border-bottom: 5px solid transparent;
+}
+
+.pagina .submenu ul li a:hover,
+.pagina .submenu ul li a:active,
+.pagina .submenu ul li a:focus,
+.pagina .submenu ul li a.current
+{
+    color: white;
+    border-bottom-color: #ff4c34;
+}
+
+.pagina .submenu.fixtop
+{
+    position: fixed;
+    top: 70px;
+    z-index: 1000;
+    width: 100%;
+    height: 50px;
+}
+
+.pagina .submenu.fixtop ul
+{
+    text-align: right;
+}
+
+.pagina .submenu.fixtop ul li,
+.pagina .submenu.fixtop ul li a
+{
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.influencia-bt
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 15px;
+}
+
+.influencia-bt:hover,
+.influencia-bt:focus,
+.influencia-bt:active
+{
+    color: white;
+}
+
+.influencia-bt.red
+{
+    background: #ff4c34;
+}
+
+.influencia-bt.red:hover,
+.influencia-bt.red:focus,
+.influencia-bt.red:active
+{
+    background: #e12e23;
+}
+
+.influencia-bt.green
+{
+    background: #7db6b0;
+}
+
+.influencia-bt.green:hover,
+.influencia-bt.green:focus,
+.influencia-bt.green:active
+{
+    background: #64928d;
+}
+
+.influencia-bt.disabled,
+.influencia-bt.disabled:hover,
+.influencia-bt.disabled:focus,
+.influencia-bt.disabled:active
+{
+    background: #666;
+    color: #999;
+}
+
+ul.tags li,
+.oe-tags li
+{
+    float: left;
+}
+
+ul.tags li a,
+.oe-tags li a
+{
+    color: white;
+}
+
+ul.tags li:after,
+.oe-tags li:after
+{
+    content: "|";
+    color: #ff4c34;
+    margin: 0 6px;
+}
+
+ul.tags li:nth-last-child(2):after,
+.oe-tags li:last-child:after
+{
+    content: none;
+}
+
+ul.tags,
+.oe-tags
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 11px;
+    color: white;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+
+/*----------------------CLASSES----------------------*/
+
+
+
+
+
+
+/*----------------------MEDIAS----------------------*/
+
+@media (max-width: 479px) {
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+/*----------------------MEDIAS----------------------*/
+
+
+
+
+
+
+html,
+body
+{
+	height: 100%;
+	padding-top: 0;
+}
+
+body
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    letter-spacing: -0.03em;
+}
+
+a:hover,
+a:active,
+a:focus
+{
+    text-decoration: none;
+}
+
+ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+*, *:before, *:after
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+
+/*----------------------ANIMAÇÃO ON SCROLL----------------------*/
+
+
+.summon.hided
+{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
+	-webkit-transform: scale(0.2,0.2);
+	-moz-transform: scale(0.2,0.2);
+	-ms-transform: scale(0.2,0.2);
+	-o-transform: scale(0.2,0.2);
+	transform: scale(0.2,0.2);
+}
+
+.summon.appeared
+{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+	-webkit-transform: scale(1,1);
+	-moz-transform: scale(1,1);
+	-ms-transform: scale(1,1);
+	-o-transform: scale(1,1);
+	transform: scale(1,1);
+}
+
+
+/*----------------------ANIMAÇÃO ON SCROLL----------------------*/
+
+
+
+
+
+
+
+
+/*-------------------MENU-------------------*/
+
+
+.main-logo
+{
+    text-indent: -9999px;
+    background: url(img/revista-influencia-logo.jpg) no-repeat center;
+    width: 253px;
+    height: 48px;
+    margin: 0 auto;
+    padding: 40px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.main-logo a
+{
+    outline: none;
+}
+
+#main-header
+{
+    height: 208px;
+}
+
+#menu hgroup
+{
+    float: none;
+}
+
+#menu ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0.1px;
+    padding-top: 0px;
+    background-color: #e4e4e4;
+    height: 80px;
+    text-align: center;
+    width: 100%;
+}
+
+#menu ul li
+{
+    display: inline-block;
+    height: 100%;
+}
+
+#menu ul li a
+{
+    color: #343434;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    padding: 26px;
+    display: block;
+    height: 100%;
+}
+
+#menu ul li a:hover,
+#menu ul li a:focus,
+#menu ul li a:active,
+#menu ul li a.current
+{
+    text-decoration: none;
+    color: white;
+    background-color: #ff4c34;
+}
+
+
+#menu.fixtop
+{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 70px;
+    background: #e4e4e4;
+    padding: 0 20px;
+}
+
+#menu.fixtop hgroup
+{
+    float: left;
+    height: 70px;
+    padding: 0;
+    background-image: url(img/revista-influencia-logo-menu-fixed.png);
+    background-position: center left;
+}
+
+#menu.fixtop ul
+{
+    text-align: right;
+    padding-left: 200px;
+    height: 70px;
+}
+
+#menu.fixtop ul li a
+{
+    font-size: 18px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+
+
+
+/*-------------------MENU-------------------*/
+
+
+
+
+
+/*-------------------HOME-------------------*/
+
+
+.home #novidades
+{
+    position: relative;
+}
+
+.home #novidades .seta
+{
+    position: absolute;
+    z-index: 100;
+    bottom: 25px;
+    height: 30px;
+    width: 25px;
+    border: none;
+    outline: none;
+    right: 50%;
+}
+
+.home #novidades .seta.esq:active,
+.home #novidades .seta.esq:focus,
+.home #novidades .seta.esq:hover
+{
+    background-position: left center;
+}
+
+.home #novidades .seta.esq
+{
+    background: url(img/revistainfluencia-seta-carousel-previous.png) no-repeat center;
+    margin-right: 45px;
+}
+
+.home #novidades .seta.dir:active,
+.home #novidades .seta.dir:focus,
+.home #novidades .seta.dir:hover
+{
+    background-position: right center;
+}
+
+.home #novidades .seta.dir
+{
+    background: url(img/revistainfluencia-seta-carousel-next.png) no-repeat center;
+    margin-right: -70px;
+}
+
+.home #novidades #contador
+{
+    height: 16px;
+    position: absolute;
+    z-index: 2;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    background: url(img/revista-influencia-bg-contador-home.png) left center;
+}
+
+.home #novidades #contador #marca
+{
+    display: inline-block;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    background: #ff4c34;
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 19px;
+
+    -webkit-transition: 0.4s right cubic-bezier(0.34, 0, 0, 1) 1s;
+    -moz-transition: 0.4s right cubic-bezier(0.34, 0, 0, 1) 1s;
+    -o-transition: 0.4s right cubic-bezier(0.34, 0, 0, 1) 1s;
+    -ms-transition: 0.4s right cubic-bezier(0.34, 0, 0, 1) 1s;
+    transition: 0.4s right cubic-bezier(0.34, 0, 0, 1) 1s;
+
+    -webkit-transition: 0.4s left cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: 0.4s left cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: 0.4s left cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: 0.4s left cubic-bezier(0.34, 0, 0, 1);
+    transition: 0.4s left cubic-bezier(0.34, 0, 0, 1);
+}
+
+.home #novidades ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 485px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.home #novidades ul li
+{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    margin-left: -30px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+
+    -webkit-transition: margin 0.3s 1s, opacity 0.2s 1s, cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: margin 0.3s 1s, opacity 0.2s 1s, cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: margin 0.3s 1s, opacity 0.2s 1s, cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: margin 0.3s 1s, opacity 0.2s 1s, cubic-bezier(0.34, 0, 0, 1);
+    transition: margin 0.3s 1s, opacity 0.2s 1s, cubic-bezier(0.34, 0, 0, 1);
+}
+
+.home #novidades li.highlight
+{
+    margin-left: 0;
+
+    -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+    filter: alpha(opacity=100);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+
+    -webkit-transition: margin 0.3s 0.2s, opacity 0.2s 0.2s cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: margin 0.3s 0.2s, opacity 0.2s 0.2s cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: margin 0.3s 0.2s, opacity 0.2s 0.2s cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: margin 0.3s 0.2s, opacity 0.2s 0.2s cubic-bezier(0.34, 0, 0, 1);
+    transition: margin 0.3s 0.2s, opacity 0.2s 0.2s cubic-bezier(0.34, 0, 0, 1);
+}
+
+.home #novidades ul li article
+{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.home #novidades ul li article #wrap-text
+{
+    z-index: 1;
+    position: relative;
+    top: 30%;
+    left: -30px;
+    text-align: right;
+
+    -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+
+    -webkit-transition: left 0.2s 0.2s, opacity 0.2s 0.2s, cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: left 0.2s 0.2s, opacity 0.2s 0.2s, cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: left 0.2s 0.2s, opacity 0.2s 0.2s, cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: left 0.2s 0.2s, opacity 0.2s 0.2s, cubic-bezier(0.34, 0, 0, 1);
+    transition: left 0.2s 0.2s, opacity 0.2s 0.2s, cubic-bezier(0.34, 0, 0, 1);
+}
+
+.home #novidades ul li.highlight article #wrap-text
+{
+    left: 0;
+
+    -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
+    filter: alpha(opacity=100);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+
+    -webkit-transition: left 0.3s 0.3s, opacity 0.2s 0.4s, cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: left 0.3s 0.3s, opacity 0.2s 0.4s, cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: left 0.3s 0.3s, opacity 0.2s 0.4s, cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: left 0.3s 0.3s, opacity 0.2s 0.4s, cubic-bezier(0.34, 0, 0, 1);
+    transition: left 0.3s 0.3s, opacity 0.2s 0.4s, cubic-bezier(0.34, 0, 0, 1);
+}
+
+.home #novidades article,
+.home #novidades figure
+{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.home #novidades article
+{
+    position: relative;
+}
+
+.home #novidades article:after
+{
+    display: block;
+    content: " ";
+    background: #76BBB4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    -moz-opacity: 0.20;
+    -khtml-opacity: 0.20;
+    opacity: 0.2;
+}
+
+.home #novidades figure,
+.home #novidades img
+{
+    width: 100%;
+    height: auto;
+}
+
+.home #novidades article h2
+{
+    background: url(img/gray-80.png);
+    text-transform: uppercase;
+    color:  white;
+    font-family: 'museo300', Arial, sans-serif;
+    font-style: 35px;
+    padding: 20px;
+    padding-left: 90px;
+    margin: 0;
+    margin-bottom: 12px;
+    margin-left: -15px;
+    text-align: left;
+}
+
+.home #novidades article h2 strong
+{
+    font-family: 'museo700', Arial, sans-serif;
+}
+
+.home #novidades article a
+{
+    background: #ff4c34;
+    text-transform: uppercase;
+    color:  white;
+    font-family: 'museo300', Arial, sans-serif;
+    font-style: 35px;
+    padding: 15px;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 14px;
+}
+
+.home #novidades article a:hover,
+.home #novidades article a:active,
+.home #novidades article a:focus
+{
+    background-color: #e12e23;
+    text-decoration: none;
+}
+
+.home #novidades article a:hover i,
+.home #novidades article a:active i,
+.home #novidades article a:focus i
+{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.home #institucional
+{
+    background-color: #76bbb4;
+    padding: 120px 0;
+}
+
+.home #institucional h2
+{
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+}
+
+.home #institucional h2 #linha-1
+{
+    font-size: 57px;
+    font-family: 'museo300', Arial, sans-serif;
+    color: #545454;
+}
+
+.home #institucional h2 #linha-2
+{
+    font-size: 54px;
+    font-family: 'museo900', Arial, sans-serif;
+    color: white;
+}
+
+.home #institucional h2 #linha-3
+{
+    font-size: 62px;
+    font-family: 'museo300', Arial, sans-serif;
+    color: #545454;
+}
+
+.home #institucional p
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.home #institucional a
+{
+    background-color: #eb5d47;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    display: block;
+    color: white;
+    font-size: 20px;
+}
+
+.home #institucional a:hover,
+.home #institucional a:active,
+.home #institucional a:focus
+{
+    background-color: #e12e23;
+    text-decoration: none;
+}
+
+.home #edicoes
+{
+    background: #ff4c34;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.home #edicoes h2 #linha1
+{
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 53px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.home #edicoes h2 #linha2
+{
+    font-family: 'museo700', Arial, sans-serif;
+    font-size: 50px;
+    color: #323232;
+    text-transform: uppercase;
+}
+
+.home #edicoes #capas
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.home #edicoes #capas li
+{
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.home #edicoes #capas li img
+{
+    width: 100%;
+}
+
+
+
+
+/*-------------------HOME-------------------*/
+
+
+
+
+/*-------------------FOOTER-------------------*/
+
+
+
+
+footer .parceiros
+{
+    background-color: #e4e4e4;
+}
+
+footer .parceiros h2 span
+{
+    font-family: 'museo900', Arial, sans-serif;
+    color: #ededed;
+}
+
+footer .parceiros ul
+{
+    margin: 50px 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .parceiros ul a
+{
+    display: inline-block;
+    text-indent: -9999px;
+    padding: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 35px;
+}
+
+footer .parceiros ul a#p01
+{
+    background-image: url(img/ph-parceiro-01.png);
+    width: 108px;
+    height: 33px;
+}
+
+footer .parceiros ul a#p02
+{
+    background-image: url(img/ph-parceiro-02.png);
+    width: 135px;
+    height: 34px;
+}
+
+footer .parceiros ul a#p03
+{
+    background-image: url(img/ph-parceiro-03.png);
+    width: 110px;
+    height: 28px;
+}
+
+footer .rodape
+{
+    background-color: #363636;
+    padding: 30px 0;
+}
+
+footer .rodape #menu-rodape
+{
+    margin: 0;
+    padding: 0;
+    color: #e4e4e4;
+    list-style: none;
+}
+
+footer .rodape #menu-rodape li
+{
+    display: inline-block;
+    padding: 40px 0;
+}
+
+footer .rodape #menu-rodape a
+{
+    color: #e4e4e4;
+    text-transform: uppercase;
+    margin-right: 10px;
+    padding: 20px 40px 20px 0;
+}
+
+footer .rodape #menu-rodape a:hover,
+footer .rodape #menu-rodape a:active,
+footer .rodape #menu-rodape a:focus,
+footer .rodape #menu-rodape a.current
+{
+    color: #ff4c34;
+}
+
+footer .rodape #realizacao
+{
+    text-align: right;
+}
+
+footer .rodape #realizacao h3
+{
+    color: #e46350;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 16px;
+}
+
+footer .rodape #realizacao ul
+{
+    display: inline-block;
+    letter-spacing: 0;
+}
+
+footer .rodape #realizacao ul li
+{
+    margin-left: 30px;
+}
+
+footer .rodape #realizacao ul #facidf
+{
+    background: url(img/revista-influencia-logo-facidf.png) no-repeat center;
+    width: 42px;
+    height: 42px;
+    display: block;
+    text-indent: -9999px;
+    float: right;
+    text-align: left;
+}
+
+footer .rodape #realizacao ul #feicotur
+{
+    background: url(img/revista-influencia-logo-feicotur.png) no-repeat center;
+    width: 124px;
+    height: 32px;
+    display: block;
+    text-indent: -9999px;
+    float: right;
+    text-align: left;
+}
+
+
+/*-------------------FOOTER-------------------*/
+
+
+
+
+
+
+
+
+/*-------------------ONDE ENCONTRAR-------------------*/
+
+
+
+
+.onde-encontrar #busca
+{
+    background: url(img/revista-influencia-bg-busca-onde-encontrar.jpg) repeat-x left;
+    text-align: center;
+    padding-bottom: 90px;
+}
+
+.onde-encontrar #busca h2
+{
+    text-indent: -9999px;
+    background: url(img/revista-influencia-logo-onde-encontrar.png) no-repeat center;
+    width: 288px;
+    height: 102px;
+    margin: 75px auto;
+}
+
+.onde-encontrar #busca form
+{
+    background-color: white;
+    height: 70px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.onde-encontrar #busca form,
+#header-interno-onde-encontrar form
+{
+    border: 0;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    text-align: left;
+}
+
+.onde-encontrar #busca form.locked #termo,
+#header-interno-onde-encontrar form.locked #termo
+{
+    width: 60%;
+}
+
+.onde-encontrar #busca form.locked #regiao
+{
+    width: 40%;
+}
+
+.onde-encontrar #busca form #autocompletar
+{
+    background: white;
+    padding: 20px;
+    height: 280px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70px;
+    z-index: 100;
+}
+
+.onde-encontrar #busca form #autocompletar div
+{
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+
+.onde-encontrar #busca form #autocompletar div #titulo
+{
+    font-family: 'museo700', Arial, sans-serif;
+    font-size: 22px;
+    color: #323232;
+    text-transform: uppercase;
+}
+
+
+
+
+.onde-encontrar #busca form #autocompletar div #titulo #ico-loading
+{
+    background: url(img/revista-influencia-loading-red-p.png) no-repeat center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: -2px;
+
+    animation: animationFrames linear 0.3s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+    -webkit-animation: animationFrames linear 0.3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 50% 50%;
+    -moz-animation: animationFrames linear 0.3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 50% 50%;
+    -o-animation: animationFrames linear 0.3s;
+    -o-animation-iteration-count: infinite;
+    -o-transform-origin: 50% 50%;
+    -ms-animation: animationFrames linear 0.3s;
+    -ms-animation-iteration-count: infinite;
+    -ms-transform-origin: 50% 50%;
+
+    display: none;
+}
+
+@keyframes animationFrames{
+  0% {
+    transform:  rotate(0deg) ;
+  }
+  100% {
+    transform:  rotate(353deg) ;
+  }
+}
+
+@-moz-keyframes animationFrames{
+  0% {
+    -moz-transform:  rotate(0deg) ;
+  }
+  100% {
+    -moz-transform:  rotate(353deg) ;
+  }
+}
+
+@-webkit-keyframes animationFrames {
+  0% {
+    -webkit-transform:  rotate(0deg) ;
+  }
+  100% {
+    -webkit-transform:  rotate(353deg) ;
+  }
+}
+
+@-o-keyframes animationFrames {
+  0% {
+    -o-transform:  rotate(0deg) ;
+  }
+  100% {
+    -o-transform:  rotate(353deg) ;
+  }
+}
+
+@-ms-keyframes animationFrames {
+  0% {
+    -ms-transform:  rotate(0deg) ;
+  }
+  100% {
+    -ms-transform:  rotate(353deg) ;
+  }
+}
+
+
+
+
+.onde-encontrar #busca form #autocompletar div ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 18px;
+    color: #888;
+}
+
+.onde-encontrar #busca form #autocompletar div ul li
+{
+    cursor: pointer;
+}
+
+.onde-encontrar #busca form #autocompletar div ul li a
+{
+    color: #323232;
+}
+
+.onde-encontrar #busca form #autocompletar div ul li:hover,
+.onde-encontrar #busca form #autocompletar div ul li a:hover,
+.onde-encontrar #busca form #autocompletar div ul li a:active,
+.onde-encontrar #busca form #autocompletar div ul li a:focus
+{
+    color: #ff4c34;
+}
+
+.onde-encontrar #busca form #wrap-campos
+{
+    height: 100%;
+}
+
+.onde-encontrar #busca form #termo,
+#header-interno-onde-encontrar form #termo
+{
+    height: 100%;
+    border: 0;
+    outline: 0;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 30px;
+    color: #76bbb4;
+    text-transform: uppercase;
+    padding: 0 20px;
+    vertical-align: middle;
+}
+
+.onde-encontrar #busca form #termo
+{
+    width: 40%;
+}
+
+.onde-encontrar #busca form #regiao,
+#header-interno-onde-encontrar form #regiao
+{
+    width: 40%;
+    height: 100%;
+    padding: 0 20px;
+    border-color: transparent;
+    outline: 0;
+    background: url(img/revista-influencia-arrow-select.png) no-repeat right center #323232;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 22px;
+    color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    padding-right: 45px;
+    margin: 0;
+    border: 0;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    position: relative;
+    z-index: 1;
+}
+
+.onde-encontrar #busca form #regiao:hover,
+#header-interno-onde-encontrar form #regiao:hover
+{
+    background-color: #525252;
+}
+
+.onde-encontrar #busca form #regiao::-ms-expand {
+    display: none;
+}
+
+.onde-encontrar #busca form #regiao option
+{
+    font-size: 16px;
+}
+
+.onde-encontrar #busca form #submit,
+#header-interno-onde-encontrar form #submit
+{
+    width: 20%;
+    height: 100%;
+    padding: 0 20px;
+    border-color: transparent;
+    outline: 0;
+    background-color: #ff4c34;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 22px;
+    color: white;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin: 0;
+    border: 0;
+    border-right: 2px solid white;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+}
+
+.onde-encontrar #busca form #submit:hover,
+.onde-encontrar #busca form #submit:active,
+.onde-encontrar #busca form #submit:focus
+{
+    background: #e12e23;
+}
+
+.onde-encontrar #querer
+{
+    padding: 80px 0;
+    background: #fcfcfc;
+}
+
+.onde-encontrar #querer h2
+{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0.85;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.onde-encontrar #querer h2 #linha-1
+{
+    display: block;
+    font-family: 'museo900', Arial, sans-serif;
+    font-size: 85px;
+    color: #7db6b0;
+}
+
+.onde-encontrar #querer h2 #linha-2
+{
+    display: block;
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 85px;
+    color: #323232;
+}
+
+.onde-encontrar #querer h2 #linha-3
+{
+    display: block;
+    font-family: 'museo900', Arial, sans-serif;
+    font-size: 66px;
+    color: #ff4c34;
+}
+
+.onde-encontrar #querer ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+.onde-encontrar #querer ul li
+{
+    font-family: 'museo700', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 26px;
+    text-align: center;
+}
+
+.onde-encontrar #querer ul li#mais
+{
+    padding-right: 0;
+    display: none;
+}
+
+.onde-encontrar #querer ul li a
+{
+    width: 100%;
+    background: #7db6b0;
+    display: block;
+    padding: 90px 0;
+    color: white;
+}
+
+.onde-encontrar #querer ul li a:hover,
+.onde-encontrar #querer ul li a:active,
+.onde-encontrar #querer ul li a:focus
+{
+    background: #323232;
+}
+
+.onde-encontrar #querer ul li a:hover i,
+.onde-encontrar #querer ul li a:active i,
+.onde-encontrar #querer ul li a:focus i
+{
+    margin-bottom: 50px;
+    margin-top: -25px;
+}
+
+.onde-encontrar #querer ul li#mais a
+{
+    background: #323232;
+}
+
+.onde-encontrar #querer ul li#mais a:hover i,
+.onde-encontrar #querer ul li#mais a:active i,
+.onde-encontrar #querer ul li#mais a:focus i
+{
+    margin-bottom: 25px;
+    margin-top: 0;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.onde-encontrar #querer ul li a i
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75px;
+    margin-bottom: 25px;
+}
+
+.onde-encontrar #querer ul li#me-cuidar a i
+{
+    background: url(img/revista-influencia-ico-me-cuidar.png) no-repeat center;
+    width: 80px;
+    height: 77px;
+}
+
+.onde-encontrar #querer ul li#presentear a i
+{
+    background: url(img/revista-influencia-ico-presentear.png) no-repeat center;
+    width: 77px;
+    height: 77px;
+}
+
+.onde-encontrar #querer ul li#me-divertir a i
+{
+    background: url(img/revista-influencia-ico-me-divertir.png) no-repeat center;
+    width: 67px;
+    height: 77px;
+}
+
+.onde-encontrar #querer ul li#comer a i
+{
+    background: url(img/revista-influencia-ico-comer.png) no-repeat center;
+    width: 74px;
+    height: 77px;
+}
+
+.onde-encontrar #querer ul li#mais a i
+{
+    background: url(img/revista-influencia-ico-mais-onde-encontrar.png) no-repeat center;
+    width: 38px;
+    height: 77px;
+}
+
+.onde-encontrar #categorias
+{
+    background-color: #e12e23;
+    padding-bottom: 90px;
+}
+
+.onde-encontrar h2
+{
+    color: white;
+    margin-bottom: 60px;
+}
+
+.onde-encontrar #categorias ul li
+{
+    padding: 5px 0;
+}
+
+.onde-encontrar #categorias ul a
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 20px;
+    color: #530000;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+
+.onde-encontrar #categorias ul a #qtd
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 11px;
+    background: #530000; 
+    color: #e12e23;
+    padding: 0 7px 1px 5px;
+    vertical-align: 3px;
+    margin-left: 5px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.onde-encontrar #categorias ul a:hover,
+.onde-encontrar #categorias ul a:active,
+.onde-encontrar #categorias ul a:focus
+{
+    background: #d41212;
+}
+
+.onde-encontrar #o-que-e
+{
+    padding: 80px 0;
+    background: #363636;
+}
+
+.onde-encontrar #o-que-e h2
+{
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 47px;
+    text-transform: uppercase;
+    color: #e4e4e4;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.onde-encontrar #o-que-e h2 span
+{
+    display: block;
+    margin-top: 10px;
+    text-indent: -9999px;
+    background: url(img/revista-influencia-logo-onde-encontrar-o-que-e.png) center no-repeat;
+    width: 228px;
+    height: 81px;
+}
+
+.onde-encontrar #o-que-e #texto p
+{
+    font-size: 18px;
+    color: #e4e4e4;
+}
+
+.onde-encontrar #o-que-e #texto a
+{
+    background: #ff4c34;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    display: block;
+}
+
+.onde-encontrar #o-que-e #texto a:hover,
+.onde-encontrar #o-que-e #texto a:active,
+.onde-encontrar #o-que-e #texto a:hover
+{
+    background: #7db6b0;
+}
+
+.onde-encontrar #o-que-e #vantagens li
+{
+    text-align: center;
+    background: #303030;
+    padding: 30px;
+}
+
+.onde-encontrar #o-que-e #vantagens h3
+{
+    font-family: 'museo300', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.onde-encontrar #o-que-e #vantagens p
+{
+    font-size: 16px;
+    color: #e4e4e4;
+}
+
+.onde-encontrar #o-que-e #vantagens #empresario h3
+{
+    color: #7db6b0;
+}
+
+.onde-encontrar #o-que-e #vantagens #consumidor h3
+{
+    color: #ff4c34;
+}
+
+
+
+.onde-encontrar #por-que-anunciar
+{
+    padding: 100px 0 50px;
+    /*background: url(img/revista-influencia-bg-por-que-anunciar-1920.jpg);*/
+}
+
+.onde-encontrar #por-que-anunciar #texto h2
+{
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 61px;
+    color: #363636;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 100px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.onde-encontrar #por-que-anunciar #texto h2 span
+{
+    font-family: 'museo700', Arial, sans-serif;
+    /*font-size: 47px;*/
+    /*display: block;*/
+    color: #ff4c34;
+}
+
+.onde-encontrar #por-que-anunciar #texto p
+{
+    font-size: 16px;
+    color: #363636;
+    padding-right: 20px;
+}
+
+.onde-encontrar #por-que-anunciar #razoes
+{
+    /*padding: 40px;*/
+}
+
+.onde-encontrar #por-que-anunciar #razoes li
+{
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 20px 40px;
+    background: #f7f7f7;
+    border-top: 100px solid #eeeeee;
+}
+
+.onde-encontrar #por-que-anunciar #razoes li figure
+{
+    margin-top: -155px;
+}
+
+.onde-encontrar #por-que-anunciar #razoes h3
+{
+    font-family: 'museo700', Arial, sans-serif;
+    font-size: 26px;
+    color: #7db6b0;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.onde-encontrar #por-que-anunciar #razoes p
+{
+    /*display: none;*/
+    font-size: 18px;
+    color: #363636;
+}
+
+
+
+
+/*-------------------ONDE ENCONTRAR-------------------*/
+
+
+
+
+
+
+
+
+
+/*-------------------INSTITUCIONAL-------------------*/
+
+
+.institucional #cabecalho
+{
+    background: url(img/revista-influencia-institucional-bg-cabecalho.jpg) no-repeat;
+    padding: 225px 0;
+}
+
+.institucional #cabecalho h2
+{
+    width: 100%;
+    height: 290px;
+    text-indent: -9999px;
+    background: url(img/revista-influencia-institucional-logo.png) no-repeat center left;
+    background-size: contain;
+    margin-left: -15px;
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-duration: 0.4s;
+    -ms-animation-duration: 0.4s;
+    -o-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+}
+
+.institucional #cabecalho #p
+{
+    height: 290px;
+    display: table;
+    padding-top: 20px;
+}
+
+.institucional #cabecalho p
+{
+    font-size: 30px;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    color: white;
+    line-height: 40px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.institucional #apresentacao
+{
+    font-size: 20px;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    text-align: center;
+    color: #323232;
+    padding: 120px 0;
+}
+
+.institucional #apresentacao h2
+{
+    font-size: 50px;
+    font-family: 'museo300', Arial, sans-serif;
+    color: #323232;
+    text-transform: uppercase;
+    line-height: 51px;
+    letter-spacing: -0.05em;
+    margin-bottom: 38px;
+}
+
+.institucional #apresentacao h2 span
+{
+    font-family: 'museo700', Arial, sans-serif;
+    color: #ff4c34;
+
+}
+
+.institucional #qualidades .container-fluid
+{
+    padding: 0;
+}
+
+.institucional #qualidades ul
+{
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.institucional #qualidades ul li
+{
+    color: white;
+    position: relative;
+    padding: 52px 0;
+    background-color: #4c4c4c;
+}
+
+.institucional #qualidades ul li #texto
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 22px;
+    padding: 0 47px;
+}
+
+.institucional #qualidades ul li #texto h2
+{
+    font-family: 'museo300', Arial, sans-serif;
+    color: #ff4c34;
+    text-transform: uppercase;
+}
+
+.institucional #qualidades ul li #texto h4
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    margin-top: -10px;
+    font-size: 16px;
+}
+
+.institucional #qualidades ul li #texto p
+{
+    margin-top: 30px;
+    line-height: 27px;
+    color: #f9f9f9;
+}
+
+.institucional #qualidades ul li #img-bsb,
+.institucional #qualidades ul li #img-bsb2
+{
+    background: url(img/revista-influencia-institucional-img-bsb.jpg) center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+}
+
+.institucional #qualidades ul li #img-bsb2
+{
+    background: url(img/revista-influencia-institucional-img-bsb-2.jpg) center;
+    background-size: cover;
+    left: 0;
+    right: 50%;
+}
+
+.institucional #publico-alvo
+{
+    background-color: #7db6b0;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 18px;
+    color: white;
+    padding: 104px 0 84px 0;
+}
+
+.institucional #publico-alvo h2
+{
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 55px;
+    color: #4c4c4c;
+    text-transform: uppercase;
+    line-height: 63px;
+    margin: 0;
+}
+
+.institucional #publico-alvo h2 span
+{
+    font-family: 'museo700', Arial, sans-serif;
+    font-size: 89px;
+    color: white;
+}
+
+.institucional #publico-alvo p
+{
+    padding-right: 31px;
+}
+
+.institucional #publico-alvo ul
+{
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.institucional #publico-alvo ul li
+{
+    list-style: none;
+    padding-right: 31px;
+}
+
+.institucional #publico-alvo ul li p
+{
+    background: url(img/revista-influencia-institucional-bg-publico.png) center left;
+    font-size: 20px;
+    padding: 5px 0 7px 48px;
+    margin-bottom: 5px;
+    line-height: 23px;
+}
+
+
+.institucional #anuncie
+{
+    background: url(img/revista-influencia-institucional-bg-anuncie.jpg) top;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 20px;
+    text-align: right;
+}
+
+.institucional #anuncie img
+{
+    margin-bottom: 10px;
+}
+
+.institucional #anuncie #texto
+{
+    padding-left: 25px;
+    text-align: left;
+}
+.institucional #anuncie h2
+{
+    font-family: 'museo300', Arial, sans-serif;
+    margin-top: 169px;
+    font-size: 40px;
+    color: #4c4c4c;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.institucional #anuncie h2 span
+{
+    font-family: 'museo700', Arial, sans-serif;
+    color: #ff4c34;
+}
+
+.institucional #anuncie #texto p
+{
+    line-height: 1.2;
+    color: #4c4c4c;
+}
+
+.institucional #anuncie #texto a
+{
+    display: block;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 17px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    background: #ff4c34;
+    padding: 24px 0;
+    margin-top: 33px;
+}
+
+.institucional #anuncie #texto a:hover
+{
+    text-decoration: none;
+}
+
+
+
+
+
+/*-------------------INSTITUCIONAL-------------------*/
+
+
+
+
+
+
+
+
+/*-------------------CARTÃO DE SAÚDE-------------------*/
+
+
+.cartao-saude #cabecalho
+{
+    background: url(img/ph-cartao.jpg) no-repeat center;
+    height: 600px;
+    margin-bottom: 220px;
+
+    /*background: url(img/revista-influencia-bg-cabecalho-cartao-de-saude.jpg) no-repeat center;*/
+    background-size: cover;
+    padding-top: 1px;
+}
+
+.cartao-saude #cabecalho h2
+{
+    padding-top: 170px;
+    text-transform: uppercase;
+    font-family: 'museo100', Arial, sans-serif;
+    font-size: 45px;
+    text-align: right;
+}
+
+.cartao-saude #cabecalho h2 span
+{
+    display: block;
+}
+
+.cartao-saude #cabecalho h2 #linha2
+{
+    font-family: 'museo900', Arial, sans-serif;
+    font-size: 174px;
+    line-height: 0.7;
+    color: #7db6b0;
+}
+
+.cartao-saude #cabecalho h2 #linha3
+{
+    font-size: 52px;
+}
+
+.cartao-saude #cabecalho h2 #linha4
+{
+    font-family: 'museo500', Arial, sans-serif;
+    font-size: 19.55px;
+}
+
+.cartao-saude #cabecalho #texto
+{
+    margin-top: 600px;
+
+    /*margin-top: 10px;*/
+    padding: 30px 20px;
+    text-align: center;
+    background: white;
+    margin-bottom: -40px;
+    line-height: 1.2;
+}
+
+.cartao-saude #cabecalho #texto p
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 18px;
+    margin-top: 20px;
+
+
+    /*
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 26px;
+    */
+}
+
+.cartao-saude #cabecalho #texto p strong
+{
+    font-family: 'museo900', Arial, sans-serif;
+}
+
+.cartao-saude #cabecalho #texto button
+{
+    width: 370px;
+    margin-top: 10px;
+
+/*
+    width: 100%;
+    margin-top: 30px;
+ */
+}
+
+.cartao-saude #empresas-e-descontos
+{
+    background: #2e2e2e;
+}
+
+.cartao-saude #empresas-e-descontos .titulo-section
+{
+    margin-top: 60px;
+    background: none;
+}
+
+.cartao-saude #empresas-e-descontos #empresas
+{
+    padding-bottom: 100px;
+}
+
+.cartao-saude #empresas-e-descontos #empresas>li
+{
+    margin-bottom: 30px;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #nome-empresa
+{
+    background: white;
+    padding: 30px;
+    padding-top: 0;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #nome-empresa #nome
+{
+    background-color: #f1f1f1;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    margin-left: -30px;
+    margin-right: -30px;
+    display: block;
+    text-indent: -9999px;
+    height: 135px;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #nome-empresa #unidades
+{
+    margin-bottom: 20px;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #nome-empresa #unidades h2
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #nome-empresa #unidades p
+{
+    font-size: 16px;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #nome-empresa #info a
+{
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    line-height: 1.3;
+    padding: 10px 20px;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #wrap-empresa
+{
+    background: #101010;
+    width: 100%;
+    height: 100%;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #descontos>ul
+{
+    margin-top: 20px;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #descontos>ul>li #wrap
+{
+    position: relative;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #descontos #tit-desconto
+{
+    background-color: #7db6b0;
+    font-family: 'museo900', Arial, sans-serif;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #descontos #tit-desconto span
+{
+    display: none;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #descontos #servicos
+{
+    padding-bottom: 20px;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #descontos #servicos #tit-servicos
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 18px;
+    color: #7db6b0;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.cartao-saude #empresas-e-descontos #empresas #descontos #servicos li
+{
+    font-size: 16px;
+    color: #e4e4e4;
+}
+
+.cartao-saude #termos-e-condicoes
+{
+    background: url(img/green-80.png);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 2000;
+}
+
+.cartao-saude #termos-e-condicoes #wrap
+{
+    background: white;
+    padding: 30px 40px;
+    padding-top: 180px;
+    text-align: center;
+}
+
+.cartao-saude #termos-e-condicoes #wrap h2
+{
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.cartao-saude #termos-e-condicoes #wrap h2 #linha1
+{
+    font-family: 'museo900', Arial, sans-serif;
+    font-size: 36px;
+    color: #7db6b0;
+    text-align: right;
+    width: 173px;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.cartao-saude #termos-e-condicoes #wrap h2 #traco
+{
+    display: none;
+}
+
+.cartao-saude #termos-e-condicoes #wrap h2 #linha2
+{
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 30px;
+    color: #888;
+    border-left: 1px solid #7db6b0;
+    display: inline-block;
+    width: 160px;
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.cartao-saude #termos-e-condicoes #wrap p
+{
+    text-align: left;
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.cartao-saude #termos-e-condicoes #wrap #close
+{
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/*-------------------CARTÃO DE SAÚDE-------------------*/
+
+
+
+
+
+
+
+
+/*-------------------CONTATO-------------------*/
+
+
+.contato
+{
+    background: url(img/revista-influencia-bg-contato.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.contato form
+{
+    margin-top: 120px;
+    margin-bottom: 120px;
+    background: white;
+    padding: 0 30px;
+}
+
+.contato form legend
+{
+    display: none;
+}
+
+.contato form #assunto
+{
+    margin: 0 -30px;
+    padding: 0;
+    margin-bottom: 50px;
+    height: 70px;
+}
+
+.contato form #assunto input
+{
+    display: none;
+}
+
+.contato form #assunto label
+{
+    width: 50%;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    background-color: #666;
+    padding: 22px 25px;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #c0c0c0;
+    text-align: center;
+    vertical-align: top;
+}
+
+.contato form #dados label.error
+{
+    font-size: 13px;
+    color: #FF4C35;
+    line-height: 2;
+    height: auto;
+    display: block;
+    border-top: 1px solid #FF4C35;
+    padding-bottom: 5px;
+}
+
+.contato form #assunto label#checked
+{
+    font-size: 20px;
+    color: white;
+    /*background-color: #ff4c35;*/
+    background-color: #7db6b0;
+    width: 100%;
+}
+
+.contato form p
+{
+    padding: 0 40px;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.contato form #dados
+{
+    margin-bottom: 60px;
+}
+
+.contato form #dados .linha
+{
+    color: #bbb;
+    font-size: 16px;
+    font-style: italic;
+    text-transform: uppercase;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    border-bottom: 1px solid #ababab;
+}
+
+.contato form #dados label
+{
+    color: #cbcbcb;
+    font-size: 16px;
+    font-style: italic;
+    text-transform: uppercase;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    line-height: 60px;
+    height: 50px;
+    padding-right: 30px;
+    position: relative;
+    vertical-align: top;
+}
+
+.contato form #dados #w-input
+{
+    display: inline-block;
+    width: 100%;
+}
+
+.contato form #dados #campo-nome label
+{
+    margin-left: -77px;
+    left: 87px;
+}
+
+.contato form #dados #campo-nome #w-input
+{
+    padding-left: 72px;
+}
+
+.contato form #dados #campo-email label
+{
+    margin-left: -83px;
+    left: 93px;
+}
+
+.contato form #dados #campo-email #w-input
+{
+    padding-left: 78px;
+}
+
+.contato form #dados #campo-telefone label
+{
+    margin-left: -104px;
+    left: 114px;
+}
+
+.contato form #dados #campo-telefone #w-input
+{
+    padding-left: 99px;
+}
+
+.contato form #dados #campo-mensagem label
+{
+    margin-left: -115px;
+    left: 125px;
+}
+
+.contato form #dados #campo-mensagem #w-input
+{
+    padding-left: 110px;
+}
+
+.contato form #dados input,
+.contato form #dados textarea
+{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    height: 60px;
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 19px;
+    color: #7db6b0;
+    font-style: normal;
+    text-transform: uppercase;
+    background: none;
+    width: 100%;
+}
+
+.contato form #dados #w-input.required:before
+{
+    content: "*";
+    display: block;
+    background: #7db6b0;
+    width: 24px;
+    height: 24px;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    line-height: 35px;
+    font-size: 27px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    margin-top: 18px;
+    padding-right: 10px;
+    padding-left: 5px;
+    padding-top: 1px;
+}
+
+.contato form #dados textarea
+{
+    resize: none;
+    padding: 17px 12px 10px;
+}
+
+.contato form input[type="submit"]
+{
+    margin: 0 -30px;
+    width: 100%;
+    padding: 25px 30px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.contato form #notificacoes
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.contato form #notificacoes #processando,
+.contato form #notificacoes #sucesso,
+.contato form #notificacoes #erro
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-left: 100%;
+    background: #FFF;
+    width: 100%;
+    height: 100%;
+    padding: 110px;
+    top: 0;
+}
+
+.contato form #notificacoes #processando img
+{
+    margin-top: 20px;
+}
+
+.contato form #notificacoes #sucesso
+{
+    /*margin-left: 0;*/
+}
+
+.contato form #notificacoes #sucesso #green
+{
+    font-family: 'museo900', Arial, sans-serif;
+    color: #7db6b0;
+    display: block;
+    font-size: 30px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.contato form #notificacoes button
+{
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+/*-------------------CONTATO-------------------*/
+
+
+
+
+
+
+
+
+/*-------------------BUSCA-------------------*/
+
+
+#header-interno-onde-encontrar
+{
+    position: relative;
+    height: 620px;
+}
+
+#header-interno-onde-encontrar.no-cat
+{
+    position: relative;
+    height: 350px;
+    background-image: url(img/revista-influencia-onde-encontrar-geral.jpg);
+}
+
+#header-interno-onde-encontrar>#linha1
+{
+    background: #343434;
+    height: 70px;
+}
+
+#header-interno-onde-encontrar h2
+{
+    text-indent: -9999px;
+    display: block;
+    background: url(img/revista-influencia-logo-onde-encontrar-120px.png) no-repeat center;
+    /*width: 120px;*/
+    height: 42px;
+    margin-top: 15px;
+}
+
+#header-interno-onde-encontrar form
+{
+    background-color: white;
+    margin-top: 15px;
+    height: 40px;
+    padding-right: 0;
+/*
+    padding-left: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+*/
+}
+
+#header-interno-onde-encontrar form.locked #termo
+{
+    width: 70%;
+}
+
+#header-interno-onde-encontrar form #termo
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 24px;
+    color: #7db6b0;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    padding-top: 3px;
+    width: 50%;
+}
+
+#header-interno-onde-encontrar form #regiao
+{
+    height: 36px;
+    font-size: 18px;
+    width: 30%;
+}
+
+#header-interno-onde-encontrar form #regiao option:first-child
+{
+    color: #aaa;
+}
+
+#header-interno-onde-encontrar form #submit
+{
+    height: 36px;
+    font-size: 24px;
+    line-height: 1;
+}
+
+#header-interno-onde-encontrar nav
+{
+    height: 70px;
+}
+
+#header-interno-onde-encontrar nav #toggle-menu
+{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    background: url(img/revista-influencia-icon-abrir-menu-onde-encontrar.png) no-repeat center right;
+}
+
+#header-interno-onde-encontrar nav.aberto #toggle-menu
+{
+    background-image: url(img/revista-influencia-icon-fechar-menu-onde-encontrar.png);
+}
+
+#header-interno-onde-encontrar nav ul
+{
+    background-color: #343434;
+    width: 168px;
+    margin-right: 0;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+
+#header-interno-onde-encontrar nav ul li
+{
+    padding: 0;
+}
+
+#header-interno-onde-encontrar nav ul li a
+{
+    width: 168px;
+    display: block;
+}
+
+#header-interno-onde-encontrar>#linha2
+{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#header-interno-onde-encontrar>#linha2 .container-fluid
+{
+    /*background: url(img/gray-20.png) #ff4c34;*/
+    background: url(img/gray-20.png) #7DB6B0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+#header-interno-onde-encontrar.no-cat>#linha2 .container-fluid
+{
+    background: url(img/green-50.png);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+#header-interno-onde-encontrar>#linha2 h3
+{
+    /*background: #FF4C34;*/
+    background: #7DB6B0;
+    padding: 20px 30px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'museo900', Arial, sans-serif;
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+}
+
+#header-interno-onde-encontrar>#linha2 h4,
+#header-interno-onde-encontrar>#linha2 h5
+{
+    font-family: 'museo300', Arial, sans-serif;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.1;
+    text-align: left;
+}
+
+#header-interno-onde-encontrar>#linha2 h4
+{
+    display: inline-block;
+    max-width: 75%;
+}
+
+#header-interno-onde-encontrar>#linha2 h4 #wrap-busca
+{
+    background: #343434;
+    display: inline-block;
+    padding: 21px 30px;
+}
+
+#header-interno-onde-encontrar>#linha2 h4 #wrap-busca #mostra-termo
+{
+    font-size: 28px;
+}
+
+#header-interno-onde-encontrar>#linha2 h4 #wrap-busca #pre
+{
+    display: block;
+}
+
+#header-interno-onde-encontrar>#linha2 h4 #wrap-categoria,
+#header-interno-onde-encontrar>#linha2 h5 #wrap-regiao
+{
+    display: inline-block;
+    padding: 24px 20px;
+}
+
+#header-interno-onde-encontrar>#linha2 h4 #pre,
+#header-interno-onde-encontrar>#linha2 h4 #mostra-termo
+{
+    display: inline-block;
+}
+
+#header-interno-onde-encontrar>#linha2 #linha1
+{
+    display: block;
+    font-size: 14px;
+    font-style: italic;
+}
+
+#header-interno-onde-encontrar>#linha2 #mostra-termo
+{
+    font-family: 'museo900', Arial, sans-serif;
+    font-size: 18px;
+}
+
+#header-interno-onde-encontrar>#linha2 h5
+{
+    background: url(img/gray-20.png);
+    font-size: 34px;
+    display: inline-block;
+}
+
+.busca #wrap-resultados
+{
+    background: #fafafa;
+    padding-top: 70px;
+}
+
+.busca #resultados
+{
+    margin-bottom: 100px;
+}
+
+.busca #resultados aside section
+{
+    background: #f7f7f7;
+    padding: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.busca #resultados aside h2
+{
+    font-family: 'museo700', Arial, sans-serif;
+    font-size: 19px;
+    color: #ff4c34;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.busca #resultados aside section #wrap-busca-rapida
+{
+    background-color: #7db6b0;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    height: 60px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.busca #resultados aside section #wrap-busca-rapida #limpar
+{
+    background: url(img/revista-influencia-ico-limpa-busca-categorias-busca-onde-encontrar.png) no-repeat center white;
+    border: none;
+    outline: none;
+    width: 39px;
+    height: 39px;
+    position: absolute;
+    right: 20px;
+    display: none;
+}
+
+.busca #resultados aside section #wrap-busca-rapida span
+{
+    background: red;
+    position: absolute;
+    right: 20px;
+    left: 20px;
+}
+
+.busca #resultados aside section #wrap-busca-rapida input
+{
+    background: url(img/revista-influencia-ico-lupa-categorias-busca-onde-encontrar.png) no-repeat center right white;
+    border: none;
+    outline: none;
+    padding: 4px 40px 4px 10px;
+    font-size: 22px;
+    color: #7db6b0;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.busca #resultados aside section li
+{
+    font-size: 17px;
+    color: #888;
+    border-bottom: 1px solid #dedede;
+    line-height: 2;
+    padding-left: 5px;
+    position: relative;
+}
+
+.busca #resultados aside section li a
+{
+    color: #888;
+}
+
+.busca #resultados aside section li:hover
+{
+    background: #7db6b0;
+    color: white;
+}
+
+.busca #resultados aside section li:hover a
+{
+    color: white;
+}
+
+.busca #resultados aside section li:hover #qtd
+{
+    background: white;
+    color: #7db6b0;
+}
+
+.busca #resultados aside section li:hover:after
+{
+    content: "+";
+    font-family: 'museo900', Arial, sans-serif;
+    font-size: 15px;
+    position: absolute;
+    right: 10px;
+    color: white;
+}
+
+.busca #resultados aside section li #qtd
+{
+    background: #7db6b0;
+    color: white;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 12px;
+    padding: 0 6px 1px 5px;
+    vertical-align: 1px;
+    margin-left: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.busca #resultados #info
+{
+    font-size: 20px;
+    color: #737373;
+    text-align: right;
+    margin-bottom: 40px;
+}
+
+.busca #resultados #info span
+{
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+.busca #resultados #empresas li article
+{
+    /*background-image: url(img/revista-influencia-bg-empresas.jpg);*/
+    background-color: white;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: 100%;
+    /*height: 175px;*/
+    position: relative;
+    margin-bottom: 40px;
+    -webkit-box-shadow: 2px 2px 15px #e3e3e3;
+    -moz-box-shadow:    2px 2px 15px #e3e3e3;
+    box-shadow: 2px 2px 15px #e3e3e3;
+}
+
+.busca #resultados #empresas li article p
+{
+    padding-right: 20px;
+}
+
+.busca #resultados #empresas li article #cor
+{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    background-position: 0 -37px;
+    /*background-image: url(img/revista-influencia-bg-cor-empresas.png);*/
+}
+
+.busca #resultados #empresas li article.no-logo #cor
+{
+    left: 0;
+}
+
+.busca #resultados #empresas li article:hover #cor
+{
+    /*background-image: url(img/revista-influencia-bg-cor-empresas-hover.png);*/
+}
+
+.busca #resultados #empresas li article #logo
+{
+    height: 100%;
+    float: left;
+    padding: 25px;
+}
+
+.busca #resultados #empresas li article #logo figure
+{
+    height: 100%;
+}
+
+.busca #resultados #empresas li article #logo #helper
+{
+    vertical-align: middle;
+    display: inline-block;
+    width: 0%;
+    height: 100%;
+}
+
+.busca #resultados #empresas li article #logo img
+{
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    max-width: auto;
+}
+
+.busca #resultados #empresas li article #wrap-infos
+{
+    height: 100%;
+    float: left;
+    padding: 0;
+}
+
+.busca #resultados #empresas li article h2
+{
+    position: relative;
+    line-height: 1;
+    z-index: 5;
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 45px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background: url(img/gray-80.png);
+}
+
+.busca #resultados #empresas li article:hover h2
+{
+    background: url(img/green-80.png);
+}
+
+.busca #resultados #empresas li article.no-logo h2
+{
+    padding-top: 20px;
+}
+
+.busca #resultados #empresas li article h2:after
+{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: url(img/revista-influencia-ico-mais-circ-line.png) no-repeat left center;
+    -webkit-transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+    transition: 0.4s all cubic-bezier(0.34, 0, 0, 1);
+}
+
+.busca #resultados #empresas li article:hover h2:after
+{
+    width: 40px;
+}
+
+.busca #resultados #empresas li article #infos
+{
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    z-index: 5;
+    line-height: 1.2;
+    background-color: white;
+    /*background-color: #fafafa;*/
+    border-top: 2px solid white;
+}
+
+.busca #resultados #empresas li article.no-logo #infos
+{
+    left: 0;
+}
+.busca #resultados #empresas li article #infos p
+{
+    font-size: 15px;
+    color: #343434;
+    margin: 10px 0 0;
+}
+
+.busca #resultados #empresas li article #infos #telefone
+{
+    font-size: 17px;
+}
+
+.busca #resultados #empresas li article #infos #telefone i
+{
+    margin-right: 5px;
+}
+
+.busca #resultados #empresas li article #infos #tags
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 11px;
+    color: #848484;
+    text-transform: uppercase;
+    font-style: italic;
+    background: #f9f9f9;
+    padding: 7px 15px;
+    margin-top: 20px;
+    margin-left: -10px;
+    margin-bottom: -15px;
+    margin-right: -20px;
+}
+
+.busca #resultados #empresas li article #infos #tags li
+{
+    float: left;
+}
+
+.busca #resultados #empresas li article #infos #tags li:after
+{
+    content: "|";
+    color: #ff4c34;
+    margin: 0 6px;
+
+}
+
+.busca #resultados #empresas li article #infos #tags li:nth-last-child(2):after
+{
+    content: none;
+    display: none;
+}
+
+
+/*-------------------BUSCA-------------------*/
+
+
+
+
+/*-------------------EMPRESAS-------------------*/
+
+.empresa header #infos
+{
+    background: #e4e4e4;
+    padding-top: 60px;
+    padding-bottom: 45px;
+}
+
+.empresa header #infos figure
+{
+    background: white;
+    height: 145px;
+}
+
+.empresa header #infos figure #helper
+{
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.empresa header #infos img
+{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.empresa header #infos #textos h3
+{
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 40px;
+    color: #323232;
+}
+
+.empresa header #infos #textos #categorias li
+{
+    float: left;
+    font-family: 'titilliumbold', Arial, sans-serif;
+}
+
+.empresa header #infos #textos #categorias li:after
+{
+    content: "|";
+    display: inline-block;
+    margin: 0 7px;
+    color: #ff4c34;
+}
+
+.empresa header #infos #textos #categorias li:nth-last-child(2):after
+{
+    content: none;
+}
+
+.empresa header #infos #textos #categorias a
+{
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.empresa header #infos #textos #endereco
+{
+    font-size: 17px;
+    color: #959b9e;
+    margin: 10px 0;
+}
+
+.empresa header #infos #textos #endereco i
+{
+    margin-right: 4px;
+}
+
+.empresa header #infos #textos #avaliacoes
+{
+    width: 131px;
+    position: relative;
+}
+
+.empresa header #infos #textos #avaliacoes #estrelas #bg
+{
+    display: block;
+    width: 100%;
+    height: 20px;
+    background: #bcbcbc;
+}
+
+.empresa header #infos #textos #avaliacoes #estrelas #bar
+{
+    background: #ff4c34;
+    width: 131px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.empresa header #infos #textos #avaliacoes #estrelas #msk
+{
+    background: url(img/revista-influencia-avaliacao-perfil-empresa.png) center no-repeat;
+    width: 131px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.empresa header #infos #textos #avaliacoes #numero
+{
+    margin-top: 3px;
+    display: block;
+    font-size: 12px;
+    color: #959b9e;
+}
+
+.empresa header #infos #contatos
+{
+    margin: 40px 0 20px;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.empresa header #infos #contatos li
+{
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+    background: #797979;
+    padding: 7px 13px;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.empresa header #infos #contatos li a
+{
+    color: white;
+}
+
+.empresa header #infos #contatos li:hover,
+.empresa header #infos #contatos li:active,
+.empresa header #infos #contatos li:focus
+{
+    background-color: #4e4e4e;
+}
+
+.empresa header #infos #contatos li i
+{
+    background-color: #4e4e4e;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 40px;
+    margin: -7px 13px -13px -13px;
+}
+
+.empresa header #infos #contatos #telefone i,
+.empresa header #infos #contatos #telefone2 i
+{
+    background-image: url(img/revista-influencia-ico-telefone-bola.png);
+}
+
+.empresa header #infos #contatos #facebook i
+{
+    background-image: url(img/revista-influencia-ico-facebook-bola.png);
+}
+
+.empresa header #infos #contatos #email i
+{
+    background-image: url(img/revista-influencia-ico-email-bola.png);
+}
+
+.empresa header #infos #contatos #site i
+{
+    background-image: url(img/revista-influencia-ico-pagina-bola.png);
+}
+
+.empresa header #infos #acoes
+{
+    display: none;
+}
+
+.empresa header #infos #acoes li
+{
+    display: inline-block;
+}
+
+.empresa header #infos #acoes li button
+{
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: white;
+    background: #7db6b0;
+    padding: 10px 13px;
+    height: 50px;
+    white-space: nowrap;
+    margin-right: 10px;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+
+.empresa header #infos #acoes li button:hover,
+.empresa header #infos #acoes li button:active,
+.empresa header #infos #acoes li button:focus
+{
+    background-color: #6e9c97;
+}
+
+.empresa header #infos #acoes li i
+{
+    background-color: #6e9c97;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: -10px 13px -13px -13px;
+    vertical-align: top;
+}
+
+.empresa header #infos #acoes #email i
+{
+    background-image: url(img/revista-influencia-ico-chat-bola.png);
+}
+
+.empresa header #infos #acoes #avaliar i
+{
+    background-image: url(img/revista-influencia-ico-avaliar-bola.png);
+}
+
+.empresa #caracteristicas
+{
+    padding: 40px 0 40px;
+    color: #323232;
+    font-size: 16px;
+}
+
+.empresa #caracteristicas #wrap-map
+{
+    background: #323232;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.empresa #caracteristicas #map-perfil-empresa
+{
+    height: 310px;
+    display: block;
+}
+
+/*-------------------EMPRESAS-------------------*/
+
+
+
+
+
+
+
+
+
+/*-------------------ARTIGOS-------------------*/
+
+
+.artigos
+{
+    padding-bottom: 150px;
+}
+
+.artigos li .tags
+{
+    margin: 10px 0 0;
+}
+
+.artigos li .tags li a
+{
+    color: #888888;
+}
+
+.artigos #destaque
+{
+    height: 500px;
+    margin-bottom: 100px;
+}
+
+.artigos #destaque figure
+{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.artigos #destaque #wrap
+{
+    position: absolute;
+    bottom: 50px;
+}
+
+.artigos #destaque h2
+{
+    background: #323232;
+    font-family: 'museo700', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: white;
+    padding: 30px;
+    line-height: 1;
+    margin-bottom: -10px;
+}
+
+.artigos #destaque h3
+{
+    background: #ff4c34;
+    font-size: 17px;
+    line-height: 1.3;
+    color: white;
+    padding: 30px;
+    margin-bottom: -10px;
+}
+
+.artigos #destaque #social
+{
+    display: none;
+    background: #d64734;
+    color: white;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 15px;
+    padding: 10px 30px;
+}
+
+.artigos #social span
+{
+    margin-right: 10px;
+}
+
+.artigos #social i
+{
+    text-indent: -9999px;
+    width: 16px;
+    height: 16px;
+    vertical-align: -3px;
+    margin-right: 5px;
+}
+
+.artigos li #cat
+{
+    background: #ff4c34;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    display: inline-block;
+    margin-top: -40px;
+}
+
+.artigos li.bem-estar #cat
+{
+    background: #76bbb4;
+}
+
+
+.artigos #artigo-xg
+{
+    height: 497px;
+}
+
+.artigos #artigo-g
+{
+    height: 336px;
+}
+
+.artigos li h2
+{
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: block;
+    color: #323232;
+}
+
+.artigos #artigo-g h2,
+.artigos #artigo-m h2
+{
+    font-size: 22px;
+}
+
+.artigos li figure
+{
+    position: relative;
+    z-index: -1;
+}
+
+.artigos li figure:after
+{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url(img/space.gif) repeat-x center bottom;
+
+    -webkit-transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+    -moz-transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+    -o-transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+    -ms-transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+    transition: 0.6s all cubic-bezier(0.34, 0, 0, 1);
+}
+
+.artigos li:hover figure:after
+{
+    background: url(img/revista-influencia-msk-vermelha-hover-artigo.png) repeat-x center bottom;
+}
+
+.artigos li.bem-estar:hover figure:after
+{
+    background: url(img/revista-influencia-msk-verde-hover-artigo.png) repeat-x center bottom;
+}
+
+.artigos li:hover h2
+{
+    color: #ff4c34;
+}
+
+.artigos li.bem-estar:hover h2
+{
+    color: #76bbb4;
+}
+
+.artigos #social #curtidas
+{
+    background: url(img/revista-influencia-ico-like-ball-white-artigos.png) no-repeat center;
+}
+
+.artigos #social #comentarios
+{
+    background: url(img/revista-influencia-ico-comentarios-ball-white-artigos.png) no-repeat center;
+}
+
+.artigos #social #shares
+{
+    background: url(img/revista-influencia-ico-compartilhamento-ball-white-artigos.png) no-repeat center;
+}
+
+
+/*-------------------ARTIGOS-------------------*/
+
+
+
+
+
+
+
+
+/*-------------------ARTIGO-------------------*/
+
+
+.artigo
+{
+    padding-bottom: 80px;
+}
+
+.artigo header
+{
+    position: relative;
+}
+
+.artigo header figure
+{
+    padding: 0;
+}
+
+.artigo header #wrap
+{
+    background: url(img/gray-50.png);
+    position: absolute;
+    bottom: 0;
+    padding: 13px 20px 20px;
+}
+
+.artigo header #wrap #data,
+.artigo header #wrap #texto
+{
+    float: left;
+    display: inline-block;
+}
+
+.artigo header #wrap #data
+{
+    background: white;
+    color: #ff4c34;
+    padding: 10px 20px;
+    vertical-align: top;
+    margin-top: 7px;
+    margin-right: 20px;
+}
+
+.artigo header #wrap #data span
+{
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 0.9;
+}
+
+.artigo header #wrap #data #linha1
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 46px;
+}
+
+.artigo header #wrap #data #linha2
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 32px;
+}
+
+.artigo header #wrap #data #linha3
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 24px;
+}
+
+.artigo header #wrap #texto
+{
+    margin-left: -20px;
+    padding-left: 30px;
+}
+
+.artigo header #wrap #texto h2
+{
+    font-family: 'museo900', Arial, sans-serif;
+    font-size: 46px;
+    color: white;
+    text-transform: uppercase;
+    display: inline;
+    margin: 0;
+}
+
+.artigo header #wrap #texto #fonte
+{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: white;
+    font-style: italic;
+}
+
+.artigo header #wrap #texto #fonte span
+{
+    text-decoration: underline;;
+}
+
+.artigo #chamada h3
+{
+    font-family: 'museo100', Arial, sans-serif;
+    font-size: 26px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.artigo #bloco
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.artigo #bloco p
+{
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.artigo #bloco h1,
+.artigo #bloco h2,
+.artigo #bloco h3,
+.artigo #bloco h4,
+.artigo #bloco h5,
+.artigo #bloco h6
+{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    margin-top: 0;
+}
+
+.artigo #bloco ul
+{
+    margin-bottom: 20px;
+    padding-left: 40px;
+}
+
+.artigo #bloco ul li
+{
+    list-style: disc;
+}
+
+.artigo #bloco img
+{
+    /*margin-top: 47px;*/
+}
+
+.artigo #bloco #citacao
+{
+    margin-top: 30px;
+}
+
+.artigo #bloco #citacao,
+.artigo #bloco #citacao p
+{
+    font-family: 'museo500', Arial, sans-serif;
+    font-size: 40px;
+    line-height: 1.1;
+    color: #ff4c34;
+    text-align: center;
+    font-style: italic;
+}
+
+.artigo #bloco #citacao:before,
+.artigo #bloco #citacao:after
+{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 27px;
+    left: 0;
+    right: 0;
+}
+
+.artigo #bloco #citacao:before
+{
+    top: -40px;
+    background: url(img/revista-influencia-ico-abre-aspas-ball-red.png) no-repeat center;
+}
+
+.artigo #bloco #citacao:after
+{
+    bottom: -30px;
+    background: url(img/revista-influencia-ico-fecha-aspas-ball-red.png) no-repeat center;
+}
+
+
+
+/*-------------------ARTIGO-------------------*/
+
+
+
+
+
+
+
+
+/*-------------------EDICOES-------------------*/
+
+
+.edicoes
+{
+    padding-top: 50px;
+    padding-bottom: 180px;
+    background: #444444;
+}
+
+.edicoes figure
+{
+    text-align: center;
+    margin-bottom: -45px;
+}
+
+.edicoes figure img
+{
+    -webkit-box-shadow: 0 0 7px #272727;
+    -moz-box-shadow: 0 0 7px #272727;
+    box-shadow: 0 0 7px #272727;
+}
+
+.edicoes li
+{
+    margin-bottom: 35px;
+}
+
+.edicoes li hgroup
+{
+    display: block;
+    background: url(img/revista-influencia-faixa-revista-online.png) no-repeat center;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    text-align: center;
+    position: relative;
+    z-index: 30;
+}
+
+.edicoes li hgroup h2:after
+{
+    content: " | ";
+    display: block;
+    position: absolute;
+    right: -13px;
+    top: 0;
+}
+
+.edicoes li hgroup h2
+{
+    position: relative;
+    margin-right: 20px;
+}
+
+.edicoes li hgroup h2,
+.edicoes li hgroup h3
+{
+    margin-top: 8px;
+    font-size: 15px;
+    color: white;
+    display: inline-block;
+}
+
+.edicoes li #links
+{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.edicoes li #links a
+{
+    font-family: 'titilliumbold', Arial, sans-serif;
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 8px 13px;
+}
+
+.edicoes li #links a:hover,
+.edicoes li #links a:active,
+.edicoes li #links a:focus
+{
+    background-color: #76bbb4;
+}
+
+
+/*-------------------EDICOES-------------------*/
+
+
+
+
+
+
+
+
+
+
+
+.cartao-saude #artigos
+{
+    height: 600px;
+    background: #7db6b0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.cartao-saude #artigos h2
+{
+    font-family: 'museo500', Arial, sans-serif;
+    font-size: 56px;
+    color: #343434;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: 1.05;
+    margin-bottom: 10px;
+}
+
+.cartao-saude #artigos h2 span
+{
+    font-family: 'museo900', Arial, sans-serif;
+    font-size: 76px;
+    color: #ff4c34;
+}
+
+.cartao-saude #artigos p
+{
+    color: #f1f1f1;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.cartao-saude #artigos ul
+{
+    color: #f1f1f1;
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.cartao-saude #artigos ul article figure img
+{
+    width: 100%;
+}
+
+.cartao-saude #artigos ul article #wrap
+{
+    padding: 20px;
+    background: white;
+}
+
+.cartao-saude #artigos ul article h2
+{
+    font-family: 'museo500', Arial, sans-serif;
+    font-size: 22px;
+    color: #ff4c34;
+}
+
+.cartao-saude #artigos ul article p
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    font-size: 18px;
+    color: #343434;
+    height: 90px;
+}
+
+.cartao-saude #artigos ul article a
+{
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    background: #343434;
+    content: white;
+    font-family: 'titilliumbold', Arial, sans-serif;
+    font-size: 18px;
+    color: white;
+    padding: 15px;
+}
+
+.cartao-saude #artigos ul article a:hover,
+.cartao-saude #artigos ul article a:active
+{
+    background: #ff4c34;
+}
+
