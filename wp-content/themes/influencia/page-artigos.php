@@ -16,7 +16,7 @@
 				)
 			)
 		);
-		$artigos = get_post_by_type('artigos', 'DESC', -1, NULL, NULL, NULL, $args);
+		$artigos = get_post_by_type('artigos', 'DESC', 4, NULL, NULL, NULL, $args);
 		$i = 0;
 
 		while ($artigos->have_posts()) :
@@ -42,7 +42,19 @@
 								</figure>
 								<div id="wrap" class="col-lg-4">
 									<h2><?php the_title() ?></h2>
-									<?php echo ($chamada != "") ? '<h3>' . $chamada . '</h3>' : '' ?>
+									<?php
+										if ($chamada != '') :
+											if ( strlen($chamada) > 155) :
+
+												$chamada = substr($chamada, 0, 155);
+												$chamada = substr($chamada, 0, strrpos($chamada, ' '));
+												$noWrapPos = strrpos( $chamada, ' ' );
+												$chamada = substr($chamada, 0, $noWrapPos) . '<span class="nowrap">' . substr($chamada, $noWrapPos) . '...</span>';
+
+											endif;
+											echo '<h3>' . $chamada . '</h3>';
+										endif;
+									?>
 									<div id="social">
 										<span><i id="curtidas" class="ico">Curtidas: </i>0</span>
 										<span><i id="comentarios" class="ico">Comentários: </i>0</span>
@@ -69,7 +81,7 @@
 
 						?>
 
-						<li id="artigo-xg" class="grid-item grid-item--width2 col-xs-6">
+						<li id="artigo-xg" class="col-xs-4">
 							<article>
 								<a href="<?php the_permalink() ?>">
 									<figure>
@@ -111,11 +123,11 @@
 
 						?>
 
-						<li id="artigo-g" class="grid-item col-xs-3 <?php echo $categoria->slug ?>">
+						<li id="artigo-g" class="col-xs-4 <?php echo $categoria->slug ?>">
 							<article>
 								<a href="<?php the_permalink() ?>">
 									<figure>
-										<img src="<?php echo $imagemCabecalho['sizes']['artigos-img-m'] ?>">
+										<img src="<?php echo $imagemCabecalho['sizes']['artigos-img-g'] ?>">
 									</figure>
 								</a>
 								<span id="cat">

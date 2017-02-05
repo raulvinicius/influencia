@@ -37,63 +37,68 @@
 
 	<section id="artigos" class="container-fluid">
 
-		<div class="container">
+		<div class="">
 
-			<div class="col-xs-3">
+			<div class="col-xs-2 col-xs-offset-1">
 
 				<h2>Dicas de <span>Saúde</span></h2>
 				<p>Além de descontos para cuidar da súde, também temos uma sessão de artigos com dicas bacanas pra te ajudar nessa tarefa.</p>
 				
 			</div>
 
-			<ul>	
+			<ul>
 
-				<?php 
+				<div class="col-xs-8">
 
-				$args = array(
-					'tax_query' => array(
-						array(
-							'taxonomy'  => 'book-artigos',
-							'field'     => 'slug',
-							'terms'     => 'saude'
+					<?php 
+
+					$args = array(
+						'tax_query' => array(
+							array(
+								'taxonomy'  => 'book-artigos',
+								'field'     => 'slug',
+								'terms'     => 'saude'
+							)
 						)
-					)
-				);
-				$artigos = get_post_by_type('artigos', 'DESC', -1, NULL, NULL, NULL, $args);
-				$i = 0;
+					);
+					$artigos = get_post_by_type('artigos', 'DESC', 4, NULL, NULL, NULL, $args);
+					$i = 0;
 
-				while ($artigos->have_posts()) :
+					while ($artigos->have_posts()) :
 
-					$artigos->the_post();
+						$artigos->the_post();
 
-					$imagem = get_field('imagem_cabecalho');
-					$imagem = $imagem['sizes']['artigo-saude-cartao'];
+						$imagem = get_field('imagem_cabecalho');
+						$imagem = $imagem['sizes']['artigo-saude-cartao'];
 
-					$chamada = get_field('chamada');
-				?>
+						$chamada = get_field('chamada');
+					?>
 
-					<li>
+						<li>
 
-						<article class="col-xs-3">
+							<article class="col-xs-3">
 
-							<figure>
-								<img src="<?php echo $imagem; ?>">
-							</figure>
+								<figure>
+									<img src="<?php echo $imagem; ?>">
+								</figure>
 
-							<div id="wrap">
-								
-								<h2><?php the_title(); ?></h2>
-								<p><?php echo $chamada; ?></p>
-								
-								<a class="ani-04" href="<?php echo get_permalink( $post ); ?> ">Continua Lendo</a>
+								<div id="wrap">
+									
+									<h2><?php the_title(); ?></h2>
+									<p><?php echo $chamada; ?></p>
+									
+									<a class="ani-04" href="<?php echo get_permalink( $post ); ?> ">Continua Lendo</a>
 
-							</div>
+								</div>
 
-						</article>
+							</article>
 
-					</li>
+						</li>
 
-				<?php endwhile; ?>
+					<?php endwhile; ?>
+					
+					</div>	
+
 	
 			</ul>
 

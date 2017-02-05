@@ -14,9 +14,14 @@
                     
                         $loop->the_post();
 
-       
-
-
+                        $capa = get_field('capa');
+                        $numero = get_field('numero');
+                        $numero = sprintf("%02d", $numero);
+                        $anoInicial = 2011;
+                        $ano = get_field('ano');
+                        $anoNum = sprintf( "%02d", intval( $ano ) - $anoInicial + 1 );
+                        $pdf = get_field('pdf');
+                        
                      ?>
 
                         <li class="col-lg-3">

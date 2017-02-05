@@ -175,7 +175,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 
-.nome-empresa
+.nome-empresa,
+.nowrap
 {
     white-space: nowrap;
 }
@@ -3475,7 +3476,7 @@ footer .rodape #realizacao ul #feicotur
 
 .artigos
 {
-    padding-bottom: 150px;
+    padding-bottom: 100px;
 }
 
 .artigos li .tags
@@ -3576,12 +3577,28 @@ footer .rodape #realizacao ul #feicotur
 
 .artigos #artigo-xg
 {
-    height: 497px;
+    height: auto;
 }
+
+.artigos #artigo-xg img
+{
+    width: 100%;
+}
+
+.artigos #artigo-xg h2
+{
+    font-size: 22px;
+}
+
 
 .artigos #artigo-g
 {
     height: 336px;
+}
+
+.artigos #artigo-g img
+{
+    width: 100%;
 }
 
 .artigos li h2
