@@ -42,7 +42,7 @@
 			<div class="col-xs-2 col-xs-offset-1">
 
 				<h2>Dicas de <span>Saúde</span></h2>
-				<p>Além de descontos para cuidar da súde, também temos uma sessão de artigos com dicas bacanas pra te ajudar nessa tarefa.</p>
+				<p>Além de descontos para cuidar da súde, também temos uma sessão de artigos com dicas pra te ajudar nessa tarefa.</p>
 				
 			</div>
 

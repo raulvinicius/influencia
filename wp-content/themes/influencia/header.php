@@ -131,13 +131,14 @@
                 </hgroup>
 
                 <ul>
-                    <li><a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar">Onde Encontrar</a>
+                    <li>
+                        <a class="ani-02" href="<?php bloginfo('url') ?>/institucional">Institucional</a>
                     </li><li>
                         <a class="ani-02" href="<?php bloginfo('url') ?>/edicoes">Edições</a>
                     </li><li>
                         <a class="ani-02" href="<?php bloginfo('url') ?>/artigos">Artigos</a>
                     </li><li>
-                        <a class="ani-02" href="<?php bloginfo('url') ?>/institucional">Institucional</a>
+                        <a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar">Onde Encontrar</a>
                     </li><li>
                         <a class="ani-02" href="<?php bloginfo('url') ?>/cartao-de-saude">Cartão de Saúde</a>
                     </li><li>
