@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php 
-if(isset($_GET['b']) || isset($_GET['c']))
+if( get_query_var('busca', '') != '' || get_query_var('category_name', '') != '' )
 {
     get_template_part('page-busca');
 }

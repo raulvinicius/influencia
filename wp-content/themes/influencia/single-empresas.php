@@ -1,15 +1,24 @@
 <?php get_header(); ?>
 
+
+<?php $filial = get_query_var('onde-encontrar-regioes', ''); ?>
+
+
 <section class="empresa pagina">
 
 	<?php 
 
 		$logo = get_field('logo');
-		$logo = $logo['sizes']['large'];
+		if (is_array($logo)) {
+			$logo = $logo['sizes']['logo-perfil-empresa'];
+		}
 		$endereco = get_field('endereco');
 		$objRegiao = get_field_object('regiao_administrativa');
 		$regiao = get_field('regiao_administrativa');
-		$regiao = $regiao->name;
+		if(is_object($regiao))
+		{
+			$regiao = $regiao->name;
+		}
 		$telefone = get_field('telefone');
 		$telefone2 = get_field('telefone2');
 		$facebook = get_field('facebook');
@@ -18,29 +27,50 @@
 		$descricaoBreve = get_field('descricao_breve');
 		$notaAvaliacao = get_field('nota_avaliacao');
 		$numeroAvaliacoes = get_field('numero_avaliacoes');
+		$filiais = get_field('filiais');
+
+		//se a filial tiver o mesmo nome da matriz, esvazia $filial
+		if ( $filial == get_term_by('name', $regiao, 'onde-encontrar-regioes')->slug ) {
+			$filial = '';
+		}
+
+		//se estiver visializando uma filial marca a posição $i dela
+		if ($filial != '') 
+		{
+			for ($i=0; $i < count($filiais); $i++)
+			{ 
+				if($filiais[$i]['regiao_administrativa_filial']->slug == $filial)
+				{
+					$iFilial = $i;
+					break;
+				}
+			}
+		}
 
 	?>
 
 	<header id="header-interno-onde-encontrar" class="container-fluid">
 
-		<div class="row" id="linha1">
+		<div class="row submenu" id="linha1">
 			<div class="container">
 				<div class="row">
-
-					<h2 class="col-lg-2">Onde Encontrar<span class="hidden"> | <?php the_title(); ?></span></h2>
-					<form class="busca-onde-encontrar col-lg-9" action="<?php bloginfo('url') ?>/onde-encontrar" method="GET">
+					
+					<h2 class="col-lg-2">Onde Encontrar</h2>
+					<form id="fm-onde-encontrar" class="busca-onde-encontrar col-lg-8 locked" action="<?php bloginfo('url') ?>/onde-encontrar" method="GET">
 
 						<?php include 'form-busca-onde-encontrar.php'; ?>
 
 					</form>
 
-					<nav class="col-lg-1">
-						<button id="toggle-menu"></button>
-						<ul>
-							<li><a class="ani-04" href="#o-que-e">O que é</a></li>
-							<li><a class="ani-04" href="#por-que-anunciar">Por que anunciar</a></li>
-							<li><a class="ani-04" href="<?php bloginfo('template_url') ?>/perfil">Criar perfil do meu negócio</a></li>
-							<li><a class="ani-04" href="#">Login</a></li>
+					<nav class="col-lg-2 fechado">
+						<button id="toggle-menu" class="ani-02" data-target='links'></button>
+						<ul id="links" class="hidden">
+							<li><a class="ani-04" href="<?php bloginfo('url') ?>/onde-encontrar/#o-que-e">O que é</a></li>
+							<li><a class="ani-04" href="<?php bloginfo('url') ?>/onde-encontrar/#por-que-anunciar">Por que anunciar</a></li>
+							<?php if (1 == 0): ?>
+								<li><a class="ani-04" href="<?php bloginfo('url') ?>/onde-encontrar/cadastro">Criar perfil do meu negócio</a></li>
+								<li><a class="ani-04" href="#">Login</a></li>
+							<?php endif ?>
 						</ul>
 					</nav>
 				</div>
@@ -53,12 +83,29 @@
 					<?php if ($logo != ''): ?>
 						
 						<figure class="col-lg-2">
-							<span id="helper"></span><img src="<?php echo $logo ?>">
+							<span id="helper"></span><img src="<?php echo (is_array($logo)) ? $logo['sizes']['large'] : $logo; ?>">
 						</figure>
 
 					<?php endif ?>
 					<div id="textos" class="col-lg-10">
 						<h3><?php the_title() ?></h3>
+						<?php if ($filiais): ?>
+						<select id="select-filiais" class="ani-04 bg-cor-1 bg-cor-2-hover" name="filiais" data-p="filiais" <?php echo ( $filial != '' ) ? 'data-s="' . $filial . '"' : ''; ?> <?php echo ( count( $filiais ) + 1 <= 1 ) ? 'disabled' : ''; ?>>
+							<option value="<?php echo get_term_by('name', $regiao, 'onde-encontrar-regioes')->slug ?>" <?php echo ( ( $filial == '' || get_term_by('slug', $filial, 'onde-encontrar-regioes')->name == $regiao ) ) ? 'selected' : ''; ?>><?php echo $regiao ?></option>
+							<?php
+								for ($i=0; $i < count( $filiais ); $i++) :
+									?>
+									
+								<option value="<?php echo $filiais[$i]['regiao_administrativa_filial']->slug ?>" <?php echo ( ( $filial != '' && $filial == $filiais[$i]['regiao_administrativa_filial']->slug ) ) ? 'selected' : ''; ?>><?php echo $filiais[$i]['regiao_administrativa_filial']->name ?></option>
+
+									<?php 
+								endfor;
+
+							?>
+						</select>
+						<?php endif ?>
+						<div class="clearfix"></div>
+
 						<ul id="categorias">
 							<?php 
 
@@ -79,7 +126,17 @@
 							?>
 							<div class="clearfix"></div>
 						</ul>
-						<p id="endereco"><i class="ico maps-pin-line-red"></i><?php echo $endereco . ', ' . $regiao . ' - DF'; ?></p>
+						<?php if ($filial == ''): ?>
+							<p id="endereco">
+								<i class="ico maps-pin-line-red"></i>
+								<?php echo "{$endereco}, {$regiao} - DF"; ?>
+							</p>
+						<?php else: ?>
+							<p id="endereco">
+								<i class="ico maps-pin-line-red"></i>
+								<?php echo "{$filiais[$iFilial]['endereco_filial']}, {$regiao} - DF"; ?>
+							</p>
+						<?php endif ?>
 						<div id="avaliacoes">
 							<div id="estrelas">
 								<span id="bg"></span>
@@ -92,21 +149,49 @@
 				</div>
 				<div class="row">
 					<ul id="contatos">
-						<?php if($telefone != ''): ?>
-							<li id="telefone"><i class="ico"></i><?php echo $telefone ?></li>
-						<?php endif; ?>
-						<?php if($telefone2 != ''): ?>
-							<li id="telefone"><i class="ico"></i><?php echo $telefone2 ?></li>
-						<?php endif; ?>
-						<?php if($facebook != ''): ?>
-							<li id="facebook"><i class="ico"></i><?php echo $facebook ?></li>
-						<?php endif; ?>
-						<?php if($email != ''): ?>
-							<li id="email"><i class="ico"></i><?php echo $email ?></li>
-						<?php endif; ?>
-						<?php if($site != ''): ?>
-							<li id="site"><a href="<?php echo $site ?>?s=oe" target='_blank'><i class="ico"></i><?php echo $site ?></a></li>
-						<?php endif; ?>
+						<?php if ($filial == ''): ?>
+
+							<?php if($telefone != ''): ?>
+								<li id="telefone" class="ani-02"><i class="ico"></i><?php echo $telefone ?></li>
+							<?php endif; ?>
+							<?php if($telefone2 != ''): ?>
+								<li id="telefone" class="ani-02"><i class="ico"></i><?php echo $telefone2 ?></li>
+							<?php endif; ?>
+							<?php if($facebook != ''): ?>
+								<li id="facebook" class="ani-02"><i class="ico"></i><?php echo $facebook ?></li>
+							<?php endif; ?>
+							<?php if($email != ''): ?>
+								<li id="email" class="ani-02"><i class="ico"></i><?php echo $email ?></li>
+							<?php endif; ?>
+							<?php if($site != ''): ?>
+								<li id="site" class="ani-02"><a href="<?php echo $site ?>?s=oe" target='_blank'><i class="ico"></i><?php echo $site ?></a></li>
+							<?php endif; ?>
+
+						<?php else: ?>
+
+							<?php if($filiais[$iFilial]['telefone_filial'] != ''): ?>
+								<li id="telefone" class="ani-02"><i class="ico"></i><?php echo $filiais[$iFilial]['telefone_filial'] ?></li>
+							<?php elseif ($telefone != ''): ?>
+								<li id="telefone" class="ani-02"><i class="ico"></i><?php echo $telefone ?></li>
+							<?php endif; ?>
+							<?php if($filiais[$iFilial]['telefone2_filial'] != ''): ?>
+								<li id="telefone" class="ani-02"><i class="ico"></i><?php echo $filiais[$iFilial]['telefone2_filial'] ?></li>
+							<?php elseif ($telefone2 != ''): ?>
+								<li id="telefone" class="ani-02"><i class="ico"></i><?php echo $telefone ?></li>
+							<?php endif; ?>
+							<?php if($facebook != ''): ?>
+								<li id="facebook" class="ani-02"><i class="ico"></i><?php echo $facebook ?></li>
+							<?php endif; ?>
+							<?php if($filiais[$iFilial]['email_filial'] != ''): ?>
+								<li id="email" class="ani-02"><i class="ico"></i><?php echo $filiais[$iFilial]['email_filial'] ?></li>
+							<?php elseif ($email != ''): ?>
+								<li id="email" class="ani-02"><i class="ico"></i><?php echo $email ?></li>
+							<?php endif; ?>
+							<?php if($site != ''): ?>
+								<li id="site" class="ani-02"><a href="<?php echo $site ?>?s=oe" target='_blank'><i class="ico"></i><?php echo $site ?></a></li>
+							<?php endif; ?>
+
+						<?php endif ?>
 					</ul>
 				</div>
 				<div class="row">

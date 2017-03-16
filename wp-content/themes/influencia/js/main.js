@@ -201,6 +201,42 @@ $(document).ready(function() {
 		{
 			lockFormBuscaOE();
 		});
+
+		$('#fm-onde-encontrar').submit(function(e)
+		{
+			return false;
+			e.preventDefault();
+
+		});
+
+		$('#fm-onde-encontrar #submit').on('click', function(e)
+		{
+			var busca = $(this)
+							.closest('form')
+							.find('#termo')
+							.val();
+
+			var regiao = $(this)
+							.closest('form')
+							.find('#regiao')
+							.val();
+
+			var categoria = $(this)
+							.closest('form')
+							.find('#categoria')
+							.val();
+
+
+			var origin = window.location.origin + '/';
+
+			if(window.location.host == 'localhost')
+				origin += 'influencia/';
+
+			console.log(categoria);
+			window.location.href = origin + 'onde-encontrar/' + categoria + '/' + regiao + '/busca/' + busca + '/';
+
+		});
+
 	}
 
 	//-----------------FORM BUSCA ONDE ENCONTRAR-----------------//
@@ -241,10 +277,10 @@ $(document).ready(function() {
 
 	//-----------------ONDE ENCONTRAR-----------------//
 
-	$('.onde-encontrar form input[type="submit"]').on('click', function() 
-	{
-		window.location.replace("http://localhost/influencia/busca");
-	});
+	// $('.onde-encontrar form input[type="submit"]').on('click', function() 
+	// {
+	// 	window.location.replace("http://localhost/influencia/busca");
+	// });
 
 
 
@@ -322,6 +358,29 @@ $(document).ready(function() {
 
 
 	//-----------------CONTATO-----------------//
+
+
+
+
+
+
+
+
+	//-----------------PERFIL EMPRESA-----------------//
+
+	if( $('section.pagina.empresa').length > 0 )
+	{
+		$('#select-filiais').on('change', function(event) {
+			var urlParte1 = window.location.href.split('empresa');
+			var urlParte2 = urlParte1[1]
+			urlParte1 = urlParte1[0];
+			urlParte2 = urlParte2.split('/')[1];
+
+			window.location = urlParte1 + 'empresa/' + urlParte2 + '/' + $(this).val();
+		});
+	}
+
+	//-----------------PERFIL EMPRESA-----------------//
 
 
 
@@ -566,7 +625,7 @@ $.extend($.expr[":"], {
 function initializeMap()
 {
 
-	if( $('.empresa #infos #endereco').length > 0)
+	if( $('.empresa #infos #endereco').length > 0 && $('#map-perfil-empresa').length > 0)
 	{
 
 		var geocoder = new google.maps.Geocoder();
@@ -665,8 +724,6 @@ function activedPage ()
 		$('.current').removeClass('current');
 
 		for (var i = 0; i < pages.length; i++) {
-
-			console.log(pages[i])
 
 			//verifica se o fragmento de url tem '#'
 			if (pages[i].indexOf('#') < 0)

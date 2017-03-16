@@ -205,6 +205,64 @@ function build_taxonomies()
 
 
 
+
+add_action('init', 'add_my_url');
+function add_my_url()
+{
+    add_rewrite_rule(
+        'onde-encontrar/empresa/([^/]+)/?$',
+        'index.php?empresas=$matches[1]',
+        'top'
+    );
+
+    add_rewrite_rule(
+        'onde-encontrar/empresa/([^/]+)/([^/]+)/?$',
+        'index.php?empresas=$matches[1]&onde-encontrar-regioes=$matches[2]',
+        'top'
+    );
+
+    add_rewrite_rule(
+        'onde-encontrar/busca/([^/]+)/?$',
+        'index.php?pagename=onde-encontrar&busca=$matches[1]',
+        'top'
+    );
+
+    add_rewrite_rule(
+        'onde-encontrar/([^/]+)/?$',
+        'index.php?pagename=onde-encontrar&category_name=$matches[1]',
+        'top'
+    );
+
+    add_rewrite_rule(
+        'onde-encontrar/([^/]+)/busca/([^/]+)/?$',
+        'index.php?pagename=onde-encontrar&category_name=$matches[1]&busca=$matches[2]',
+        'top'
+    );
+
+    add_rewrite_rule(
+        'onde-encontrar/([^/]+)/([^/]+)/?$',
+        'index.php?pagename=onde-encontrar&category_name=$matches[1]&onde-encontrar-regioes=$matches[2]',
+        'top'
+    );
+
+    add_rewrite_rule(
+        'onde-encontrar/([^/]+)/([^/]+)/busca/([^/]+)/?$',
+        'index.php?pagename=onde-encontrar&category_name=$matches[1]&onde-encontrar-regioes=$matches[2]&busca=$matches[3]',
+        'top'
+    );
+
+    // flush_rewrite_rules();
+}
+
+add_action( 'init', 'add_query_var' );
+function add_query_var() {
+    global $wp;
+    $wp->add_query_var( 'busca' );
+}
+
+
+
+
 // ADICIONA O ACF OPTIONS PAGE
 
 if( function_exists('acf_add_options_page') ) {
@@ -217,6 +275,16 @@ if( function_exists('acf_add_options_page') ) {
 	'parent_slug'	=> 'edit.php?post_type=artigos',
 	'position'	=> false,
 	'icon_url' 	=> 'dashicons-images-alt2',
+	'redirect'	=> false,
+	));	
+
+	acf_add_options_page(array(
+	'page_title' 	=> 'Imprimir Cartões',
+	'menu_title' 	=> 'Imprimir Cartões',
+	'menu_slug' 	=> 'imprimir_cartoes',
+	'capability' 	=> 'edit_posts', 
+	'position'	=> false,
+	'icon_url' 	=> 'dashicons-screenoptions',
 	'redirect'	=> false,
 	));	
 }
@@ -255,7 +323,7 @@ add_filter('acf/update_value/key=field_575440b1c6fa0', 'my_update_postdata', 10,
 
 if ( function_exists( 'add_image_size' ) ) 
 {
-	add_image_size( 'logo-perfil-empresa', 166, 166, true );
+	add_image_size( 'logo-perfil-empresa', 166, 166, false );
 	add_image_size( 'artigo-destaque-home', 1920, 850, true );
 	add_image_size( 'artigos-img-g', 555, 350, true );
 	add_image_size( 'artigos-img-m', 263, 190, true );

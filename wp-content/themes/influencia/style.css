@@ -1360,7 +1360,7 @@ footer .rodape #realizacao ul #feicotur
     outline: 0;
     background: url(img/revista-influencia-arrow-select.png) no-repeat right center #323232;
     font-family: 'titilliumregular', Arial, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     color: white;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -2690,7 +2690,7 @@ footer .rodape #realizacao ul #feicotur
 #header-interno-onde-encontrar form #regiao
 {
     height: 36px;
-    font-size: 18px;
+    font-size: 16px;
     width: 30%;
 }
 
@@ -2709,6 +2709,7 @@ footer .rodape #realizacao ul #feicotur
 #header-interno-onde-encontrar nav
 {
     height: 70px;
+    z-index: 100;
 }
 
 #header-interno-onde-encontrar nav #toggle-menu
@@ -2723,6 +2724,12 @@ footer .rodape #realizacao ul #feicotur
 #header-interno-onde-encontrar nav.aberto #toggle-menu
 {
     background-image: url(img/revista-influencia-icon-fechar-menu-onde-encontrar.png);
+}
+
+#header-interno-onde-encontrar nav #links li a
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #header-interno-onde-encontrar nav ul
@@ -3149,11 +3156,35 @@ footer .rodape #realizacao ul #feicotur
 {
     left: 0;
 }
+
 .busca #resultados #empresas li article #infos p
 {
     font-size: 15px;
     color: #343434;
     margin: 10px 0 0;
+}
+
+.busca #resultados #empresas li article #infos .unidades h3
+{
+    font-family: 'museo300', Arial, sans-serif;
+    font-size: 18px;
+    color: white;
+    background: #f8f8f8;
+    font-style: italic;
+    padding: 9px 0 9px;
+    margin-left: -10px;
+    margin-top: 10px;
+}
+
+.busca #resultados #empresas li article #infos .unidades li
+{
+    margin-bottom: 20px;
+}
+
+.busca #resultados #empresas li article #infos .unidades h3 span
+{
+    padding: 9px 16px 9px 10px;
+    background: #acacac;
 }
 
 .busca #resultados #empresas li article #infos #telefone
@@ -3175,7 +3206,7 @@ footer .rodape #realizacao ul #feicotur
     font-style: italic;
     background: #f9f9f9;
     padding: 7px 15px;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: -10px;
     margin-bottom: -15px;
     margin-right: -20px;
@@ -3240,9 +3271,31 @@ footer .rodape #realizacao ul #feicotur
 {
     margin-top: 5px;
     margin-bottom: 2px;
+    margin-right: 16px;
     font-family: 'museo300', Arial, sans-serif;
     font-size: 40px;
     color: #323232;
+    display: inline;
+}
+
+.empresa header #infos #textos select
+{
+    font-family: 'titilliumregular', Arial, sans-serif;
+    vertical-align: bottom;
+    font-size: 14px;
+    color: white;
+    background: #323232;
+    border: none;
+    outline: none;
+    padding: 10px 5px 10px 20px;
+    text-transform: uppercase;
+    border-right: 10px solid #323232;
+}
+
+.empresa header #infos #textos select:hover
+{
+    background: #7db6b0;
+    border-right-color: #7db6b0;
 }
 
 .empresa header #infos #textos #categorias li

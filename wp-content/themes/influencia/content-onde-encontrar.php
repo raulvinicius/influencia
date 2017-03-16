@@ -4,8 +4,10 @@
 		<ul>
 			<li><a class="ani-04" href="#o-que-e">O que é</a></li>
 			<li><a class="ani-04" href="#por-que-anunciar">Por que anunciar</a></li>
-			<li><a class="ani-04 hidden" href="<?php bloginfo('template_url') ?>/perfil">Criar perfil do meu negócio</a></li>
-			<li><a class="ani-04 hidden" href="#">Login</a></li>
+			<?php if (1 == 0): ?>
+				<li><a class="ani-04 hidden" href="<?php bloginfo('template_url') ?>/perfil">Criar perfil do meu negócio</a></li>
+				<li><a class="ani-04 hidden" href="#">Login</a></li>
+			<?php endif ?>
 		</ul>
 	</nav>
 
@@ -30,30 +32,32 @@
 			</h2>
 			<ul>
 				<li id="me-cuidar" class="col-lg-2">
-					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/?b=Saúde">
+					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/busca/Saúde">
 						<i class="ani-04"></i>Me cuidar
 					</a>
 				</li>
 				<li id="presentear" class="col-lg-2">
-					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/?b=Presentes">
+					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/busca/Presentes">
 						<i class="ani-04"></i>Presentear
 					</a>
 				</li>
 				<li id="me-divertir" class="col-lg-2">
-					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/?b=Diversão">
+					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/busca/Diversão">
 						<i class="ani-04"></i>Me divertir
 					</a>
 				</li>
 				<li id="comer" class="col-lg-2">
-					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/?b=Alimentação">
+					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/busca/Alimentação">
 						<i class="ani-04"></i>Comer
 					</a>
 				</li>
-				<li id="mais" class="col-lg-1">
-					<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/#">
-						<i class="ani-04"></i>Mais
-					</a>
-				</li>
+				<?php if (1 == 0): ?>
+					<li id="mais" class="col-lg-1">
+						<a class="ani-02" href="<?php bloginfo('url') ?>/onde-encontrar/#">
+							<i class="ani-04"></i>Mais
+						</a>
+					</li>
+				<?php endif ?>
 				<div class="clearfix"></div>
 			</ul>
 		</div>
@@ -83,7 +87,7 @@
 								<?php endif; ?>
 
 								<li class="ani-02">
-									<a href="<?php echo bloginfo('url') ?>/onde-encontrar/?c=<?php echo $key->name ?>">
+									<a href="<?php echo bloginfo('url') ?>/onde-encontrar/<?php echo $key->name ?>">
 										<span class="nome-empresa">
 											<?php echo $key->name ?>
 											<span id="qtd"><?php echo $key->count ?></span>

@@ -90,6 +90,14 @@
         </script>
          -->
 
+         <?php 
+             if( isset($_GET['bar']) )
+             {
+                 wp_footer();
+             }
+         ?> 
+
+
     </body>
 
 

@@ -87,7 +87,7 @@
 									<h2><?php the_title(); ?></h2>
 									<p><?php echo $chamada; ?></p>
 									
-									<a class="ani-04" href="<?php echo get_permalink( $post ); ?> ">Continua Lendo</a>
+									<a class="ani-04" href="<?php echo get_permalink( $post ); ?> ">Continuar Lendo</a>
 
 								</div>
 

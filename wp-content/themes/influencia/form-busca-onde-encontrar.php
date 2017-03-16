@@ -1,3 +1,25 @@
+
+					<?php 
+
+					$qvCategoria = get_query_var('category_name', '');
+					$qvBusca = get_query_var('busca', '');
+					$qvRegiao = get_query_var('onde-encontrar-regioes', '');
+
+					//verifica se o valor das query_vars condizem com suas funções
+					if ( ( $qvCategoria == '' ) || ( $qvRegiao == '') ) {
+						$tmp = get_term_by( 'slug', $qvCategoria, 'onde-encontrar-regioes' );
+						if($tmp)
+						{
+							$qvRegiao = $qvCategoria;
+							$qvCategoria = '';
+						}
+						$tmp = NULL;
+					}
+
+					?>
+
+
+
 					<div id="autocompletar" class="hidden">
 						<div id="empresas">
 							<span id="titulo">Empresas<span id="ico-loading"></span></span>
@@ -53,12 +75,12 @@
 
 					<div id="wrap-campos">
 
-						<input id="termo" class="ani-02" type="text" name="b" autocomplete="off" <?php echo ( isset($_GET['b']) ) ? 'value="' . $_GET['b'] . '"' : '' ?>
-						><select id="regiao" class="ani-02" name="r" <?php echo ( isset($_GET['r']) ) ? 'data-s="' . $_GET['r'] . '"' : ''; ?>>
+						<input id="termo" class="ani-02" type="text" name="b" autocomplete="off" <?php echo ( $qvBusca != '' ) ? 'value="' . $qvBusca . '"' : '' ?>
+						><select id="regiao" class="ani-02" name="r" <?php echo ( $qvRegiao != '' ) ? 'data-s="' . $qvRegiao . '"' : ''; ?>>
 
 							<option value="">Escolha a Região</option>
 
-							<?php 
+							<?php
 
 							$taxonomy = 'onde-encontrar-regioes';
 							$tax_terms = get_terms($taxonomy);
@@ -68,40 +90,46 @@
 							}
 
 							?>
-<!-- 
-							<option value="aguas-claras">Águas Claras</option>
-							<option value="brazlandia">Brazlândia</option>
-							<option value="candangolandia">Candangolândia</option>
-							<option value="ceilandia">Ceilândia</option>
-							<option value="cruzeiro">Cruzeiro</option>
-							<option value="fercal">Fercal</option>
-							<option value="gama">Gama</option>
-							<option value="guara">Guará</option>
-							<option value="itapoa">Itapoã</option>
-							<option value="jardim-botanico">Jardim Botânico</option>
-							<option value="lago-norte">Lago Norte</option>
-							<option value="lago-sul">Lago Sul</option>
-							<option value="nucleo-bandeirante">Núcleo Bandeirante</option>
-							<option value="paranoa">Paranoá</option>
-							<option value="park-way">Park Way</option>
-							<option value="planaltina">Planaltina</option>
-							<option value="plano-piloto" selected>Plano Piloto</option>
-							<option value="recanto-das-emas">Recanto das Emas</option>
-							<option value="riacho-fundo">Riacho Fundo</option>
-							<option value="riacho-fundo-ii">Riacho Fundo II</option>
-							<option value="samambaia">Samambaia</option>
-							<option value="santa-maria">Santa Maria</option>
-							<option value="sao-sebastiao">São Sebastião</option>
-							<option value="sia">SIA</option>
-							<option value="sobradinho">Sobradinho</option>
-							<option value="sudoeste-octogonal">Sudoeste/Octogonal</option>
-							<option value="taguatinga">Taguatinga</option>
-							<option value="varjao">Varjão</option>
-							<option value="vicente-pires">Vicente Pires</option>						</select>
- -->
+						<?php if (1 == 0): ?>
+
+						<!-- 
+						<option value="aguas-claras">Águas Claras</option>
+						<option value="brazlandia">Brazlândia</option>
+						<option value="candangolandia">Candangolândia</option>
+						<option value="ceilandia">Ceilândia</option>
+						<option value="cruzeiro">Cruzeiro</option>
+						<option value="fercal">Fercal</option>
+						<option value="gama">Gama</option>
+						<option value="guara">Guará</option>
+						<option value="itapoa">Itapoã</option>
+						<option value="jardim-botanico">Jardim Botânico</option>
+						<option value="lago-norte">Lago Norte</option>
+						<option value="lago-sul">Lago Sul</option>
+						<option value="nucleo-bandeirante">Núcleo Bandeirante</option>
+						<option value="paranoa">Paranoá</option>
+						<option value="park-way">Park Way</option>
+						<option value="planaltina">Planaltina</option>
+						<option value="plano-piloto" selected>Plano Piloto</option>
+						<option value="recanto-das-emas">Recanto das Emas</option>
+						<option value="riacho-fundo">Riacho Fundo</option>
+						<option value="riacho-fundo-ii">Riacho Fundo II</option>
+						<option value="samambaia">Samambaia</option>
+						<option value="santa-maria">Santa Maria</option>
+						<option value="sao-sebastiao">São Sebastião</option>
+						<option value="sia">SIA</option>
+						<option value="sobradinho">Sobradinho</option>
+						<option value="sudoeste-octogonal">Sudoeste/Octogonal</option>
+						<option value="taguatinga">Taguatinga</option>
+						<option value="varjao">Varjão</option>
+						<option value="vicente-pires">Vicente Pires</option>						</select>
+						 -->
+							
+						<?php endif ?>
+
+
 						</select><input class="ani-02" id="submit" type="submit" value="Buscar">
-						<?php if ( isset($_GET['c']) ): ?>
-							<input type="hidden" name="c" value="<?php echo $_GET['c']?>">
+						<?php if ( $qvCategoria != '' ): ?>
+							<input id="categoria" type="hidden" name="c" value="<?php echo $qvCategoria?>">
 						<?php endif ?>
 						
 					</div>
