@@ -33,6 +33,7 @@ function codex_custom_init() {
 		'has_archive' => false,
 		'hierarchical' => false,
 		'menu_position' => 5,
+		'menu_icon' => 'dashicons-screenoptions',
 		'supports' => array( 'title' ),
 		'taxonomies' => array('onde-encontrar-tags', 'onde-encontrar', 'onde-encontrar-regioes', 'onde-encontrar-bairros')
 	); 
@@ -69,6 +70,7 @@ function codex_custom_init() {
 		'has_archive' => false,
 		'hierarchical' => false,
 		'menu_position' => 5,
+		'menu_icon' => 'dashicons-screenoptions',
 		'supports' => array( 'title' )
 	); 
 	register_post_type('edicoes',$argsEdicoes);
@@ -104,6 +106,7 @@ function codex_custom_init() {
 		'has_archive' => false,
 		'hierarchical' => false,
 		'menu_position' => 5,
+		'menu_icon' => 'dashicons-screenoptions',
 		'supports' => array( 'title' ),
 		'taxonomies' => array('cat-artigos', 'book-artigos', 'tag-artigos')
 	); 
@@ -206,6 +209,36 @@ function build_taxonomies()
 
 
 
+
+//CRIA PÁGINA PARA IMPRESSÃO OS CARTÕES SAÚDE////////////////
+
+
+add_action( 'admin_menu', 'my_admin_menu' );
+
+function my_admin_menu() {
+	add_menu_page( 'Imprimir Cartão Saúde', 'Cartão Saúde', 'edit_posts', 'imprimir_cartoes', 'imprimir_cartoes', 'dashicons-screenoptions', 7  );
+}
+
+function imprimir_cartoes(){
+	global $title;
+
+	print '<div class="wrap">';
+	print "<h1>$title</h1>";
+
+	$file = plugin_dir_path( __FILE__ ) . "imprimir_cartao_saude.php";
+
+	if ( file_exists( $file ) )
+	    require $file;
+
+	print '</div>';
+}
+
+/////////////////////////////////////////////////////////////
+
+
+
+
+
 add_action('init', 'add_my_url');
 function add_my_url()
 {
@@ -278,6 +311,7 @@ if( function_exists('acf_add_options_page') ) {
 	'redirect'	=> false,
 	));	
 
+/*
 	acf_add_options_page(array(
 	'page_title' 	=> 'Imprimir Cartões',
 	'menu_title' 	=> 'Imprimir Cartões',
@@ -287,6 +321,7 @@ if( function_exists('acf_add_options_page') ) {
 	'icon_url' 	=> 'dashicons-screenoptions',
 	'redirect'	=> false,
 	));	
+*/
 }
 
 
